@@ -10,7 +10,6 @@ const AuthContextWrapper = ({ children }) => {
 
   const authenticateUser = async () => {
     const tokenInStorage = localStorage.getItem("authToken");
-    // console.log("here is the token from the local storage", tokenInStorage);
     if (tokenInStorage) {
       try {
         // we make a call to the server and check if the token is valid
@@ -38,10 +37,11 @@ const AuthContextWrapper = ({ children }) => {
   useEffect(() => {
     authenticateUser();
   }, []);
+
+
     return (
         <AuthContext.Provider
             value={{
-                test: "here is a test",
                 authenticateUser,
                 user,
                 isLoading,
@@ -53,5 +53,5 @@ const AuthContextWrapper = ({ children }) => {
     );
 };
 
-export default { AuthContext, AuthContextWrapper };
+export { AuthContext, AuthContextWrapper };
 
