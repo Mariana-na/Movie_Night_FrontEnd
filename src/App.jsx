@@ -11,12 +11,13 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/" element={<EventCreationPage />} />
-        <Route path="/" element={<EventDetailPage />} />
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/" element={<ProfilePage />} />
-        <Route path="/" element={<SignupPage />} />
+        <Route path="/" element={<HomePage />}/>
+        <Route path="/signup" element={<SignupPage />}/>
+        <Route path="/login" element={<LoginPage />}/>
+        <Route path="/profile/:userId" element={<ProfilePage />}/>
+        <Route path="/eventCreation" element={<EventCreationPage />}/>
+        <Route path="/eventDetails/:eventId" element={<EventDetailPage />}/>
+        <Route path="*" element={<h1>404 page</h1>}/>
       </Routes>
     </>
   );
