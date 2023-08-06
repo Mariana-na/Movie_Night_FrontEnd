@@ -13,8 +13,6 @@ function navbar() {
                 </button>
             </Link>
 
-            
-
         </nav>
 
     )
