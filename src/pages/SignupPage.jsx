@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignupPage() {
 
@@ -8,6 +8,7 @@ function SignupPage() {
     const [lastname, setLastname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState(undefined);
 
     const navigate = useNavigate();
 
@@ -19,7 +20,7 @@ function SignupPage() {
 
             console.log("signup response", response)
 
-            navigate("/login");
+            navigate("/profile/:userId");
 
         } catch (error) {
             console.log(error);
@@ -29,7 +30,7 @@ function SignupPage() {
 
     return (
         <>
-            <h2>Login Page</h2>
+            <h2>Sign Up</h2>
             <form onSubmit={handleSignup} >
                 <label>
                     First Name:
@@ -49,6 +50,12 @@ function SignupPage() {
                 </label>
                 <button type="submit" >Sign Up!</button>
             </form>
+
+            { errorMessage && <p>{errorMessage}</p> }
+
+            <p>Already have account?</p>
+            <Link to={"/login"}> Login</Link>
+
         </>
     )
 }

@@ -1,13 +1,13 @@
 import {useContext, useState} from "react";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {AuthContext} from "../context/Auth.context";
 
 const LoginPage = () => {
 
     const [email, setEmail] = useState ("");
     const [password, setPassword] = useState ("");
-  //  const [errorMessage, setErrorMessage] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(undefined);
     const { authenticateUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const LoginPage = () => {
             localStorage.setItem("authToken", response.token);
             await authenticateUser;
 
-            navigate("/profile/:userId");
+            navigate("/");
 
         } catch (error) {
             console.log(error);
@@ -48,6 +48,11 @@ const LoginPage = () => {
                 </label>
                 <button type="submit" >Log In</button>
             </form>
+
+            { errorMessage && <p>{errorMessage}</p> }
+
+            <p>Don't have an account yet?</p>
+            <Link to={"/signup"}> Sign Up</Link>
 
 
         </>

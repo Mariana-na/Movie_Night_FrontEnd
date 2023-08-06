@@ -9,7 +9,9 @@ const AuthContextWrapper = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const authenticateUser = async () => {
+
     const tokenInStorage = localStorage.getItem("authToken");
+
     if (tokenInStorage) {
       try {
         const { data } = await axios.get("http://localhost:5005/auth/verify", {
@@ -30,7 +32,26 @@ const AuthContextWrapper = ({ children }) => {
       setIsLoading(false);
       setIsLoggedIn(false);
     }
+
+
   };
+
+  const removeToken = () => {
+    localStorage.removeItem("authToken");
+  }
+  const logoutUser = async () => {
+    try {
+      await axios.post("http://localhost:5005/auth/logout");
+      removeToken();
+      setIsLoggedIn(false);
+      setUser(null);
+      console.log("Logout successful");
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
+
+
 
   useEffect(() => {
     authenticateUser();
@@ -44,6 +65,7 @@ const AuthContextWrapper = ({ children }) => {
                 user,
                 isLoading,
                 isLoggedIn,
+                logoutUser,
             }}
         >
             {children}
