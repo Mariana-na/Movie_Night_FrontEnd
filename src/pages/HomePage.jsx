@@ -1,30 +1,20 @@
 import {Link} from "react-router-dom";
+import FilmGenreDropDown from "../components/filmGenreDropDown";
+import MealPrefDropDown from "../components/mealPrefDropDown";
+import Navbar from "../components/navbar";
 
 function HomePage() {
   return (
     <>
-        <Link to="/signup">Sign Up</Link> {/*Move to navbar component*/}
-        <Link to="/login">Log In</Link> {/*Move to navbar component*/}
+        <Navbar/>
 
         <h1>Movie Night</h1>
-{/*
-        <div>
-          <select>
-            <option disabled selected>Film genre...</option>
-            <option value="action">Action</option>
-            <option value="comedy">Comedy</option>
-            <option value="drama">Drama</option>
-          </select>
-        </div>
 
-        <div>
-          <select>
-            <option disabled selected>Meal preferences...</option>
-            <option value="vegetarian">Vegetarian</option>
-            <option value="non-vegetaria">non-Vegetarian</option>
-          </select>
-        </div>
-        */}
+        <FilmGenreDropDown />
+        <br />
+        <MealPrefDropDown/>
+        <br />
+
 
         <button>Make My Night!</button>
 
@@ -35,4 +25,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default HomePage;

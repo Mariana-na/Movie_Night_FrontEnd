@@ -36,16 +36,18 @@ const LoginPage = () => {
 
     return (
         <>
-            <h2>Login Page</h2>
+            <h1>Movie Night</h1>
             <form onSubmit={handleLogin} >
-            <label>
+                <label>
                     Email:
                     <input type="text" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
                 </label>
+                <br />
                 <label>
                     Password:
                     <input type="password" required value={password} onChange={(event) => {setPassword(event.target.value); }}/>
                 </label>
+                <br /> <br />
                 <button type="submit" >Log In</button>
             </form>
 
