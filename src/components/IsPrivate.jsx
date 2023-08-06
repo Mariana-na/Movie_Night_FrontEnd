@@ -13,11 +13,7 @@ function IsPrivate ({children}) {
         navigate("/login");
     }
 
-    return (
-        <>
-            {children}
-        </>
-    )
+    return <>{children}</>;
 
 }
 

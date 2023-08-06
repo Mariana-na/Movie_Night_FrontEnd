@@ -12,7 +12,6 @@ const AuthContextWrapper = ({ children }) => {
     const tokenInStorage = localStorage.getItem("authToken");
     if (tokenInStorage) {
       try {
-        // we make a call to the server and check if the token is valid
         const { data } = await axios.get("http://localhost:5005/auth/verify", {
           headers: { authorization: `Bearer ${tokenInStorage}` },
         });
@@ -27,7 +26,6 @@ const AuthContextWrapper = ({ children }) => {
         setIsLoggedIn(false);
       }
     } else {
-      // we will set the user back null, set isLoading to false, set isLoggedIn to false
       setUser(null);
       setIsLoading(false);
       setIsLoggedIn(false);
