@@ -1,20 +1,66 @@
-import {Link} from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function HomePage() {
-  const handleSomeFunction = () => {   
+  const handleSomeFunction = () => {
     console.log("You clicked the button!");
   };
+
+  const handleMakeMyNight = () => {
+    console.log("Make My Night clicked");
+  };
+
   return (
     <>
-      <h2>Movie Night</h2>
-      <p>Sign up or log in to get started.</p>
-      <Link to="/signup">Sign Up</Link>
-      <Link to="/login">Log In</Link>
+      <nav>
+        <div>
+          <h1>Movie Night</h1>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+         
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-      {/* Example of a button that triggers a function */}
-      <button onClick={handleSomeFunction}>Click Me</button>
+      <div>
+        <Link to="/login">
+          <button>Login</button>
+        </Link>
+        <Link to="/signup">
+          <button>Signup</button>
+        </Link>
+      </div>
+
+      <h1>Explore Movie Nights</h1>
+
+      <div>
+        <label htmlFor="movieGenre">Select Movie Genre:</label>
+        <select id="movieGenre">
+          <option value="action">Action</option>
+          <option value="comedy">Comedy</option>
+          <option value="drama">Drama</option>
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="mealPreference">Select Meal Preference:</label>
+        <select id="mealPreference">
+          <option value="vegetarian">Vegetarian</option>
+          <option value="non-vegetaria">non-Vegetaria</option>
+        </select>
+      </div>
+
+      <button onClick={handleMakeMyNight}>Make My Night!</button>
     </>
   );
 }
 
-export default HomePage
+export default HomePage;
