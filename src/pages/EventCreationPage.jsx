@@ -1,9 +1,11 @@
-import React from 'react'
+import LargeInfoLeft from "../components/RecipeInfo";
 
 function EventCreationPage() {
   return (
-    <div>EventCreationPage</div>
-  )
+    <>
+      <LargeInfoLeft />
+    </>
+  );
 }
 
-export default EventCreationPage
+export default EventCreationPage;
