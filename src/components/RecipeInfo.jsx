@@ -32,12 +32,11 @@ function RecipeInfo() {
 
   return (
     <>
-    
       <p>Name: {randomMeal && randomMeal.meals[0].strMeal}</p>
       <p>Area: {randomMeal && randomMeal.meals[0].strArea}</p>
       <p>Recipe: {randomMeal && randomMeal.meals[0].strSource}</p>
       <p>YouTube: {randomMeal && randomMeal.meals[0].strYouTube}</p>
-      <img src={randomMeal && randomMeal.meals[0].strMealThumb} />
+      <img src={randomMeal && randomMeal.meals[0].strMealThumb}  />
     </>
   );
 }

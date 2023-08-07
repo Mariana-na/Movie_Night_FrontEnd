@@ -5,7 +5,11 @@ import MovieInfo from "../components/MovieInfo";
 function EventCreationPage() {
   return (
     <>
+
+      <h1>Movie Night</h1>
+
       <MovieInfo/>
+
       <RecipeInfo />
       <EventLogistics />
     </>
