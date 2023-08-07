@@ -1,36 +1,23 @@
 // import React from 'react';
 import LogOut from '../components/LogOut';
 import {Link} from "react-router-dom";
-import navbar from '../components/navbar';
- 
-import { useEffect, useState } from 'react';
-
+import Navbar from '../components/navbar';
+import { AuthContext } from '../context/Auth.context';
+import { useContext } from 'react';
 
 /////////////////////////// Hamed codes Start //////////////////////////
 
 function ProfilePage() {
-  const [user, setUser] = useState({ name: "", email: "" });
-
-  useEffect(() => {
-    const fetchUserData = async () => {
-      const userData = await fetchUserDataFromAPI();
-      setUser(userData);
-    };
-
-    fetchUserData();
-  }, []);
-
-  const fetchUserDataFromAPI = async () => {
-    return {
-      name: "John Doe",
-      email: "john@example.com",
-    };
-  };
+  const { user } = useContext(AuthContext);
 
   return (
     <>
+      <Navbar />
       <div>
         <h2>Profile Page</h2>
+
+        //////////////// Picture //////////////
+        
         <p>
           Username: {user.name}
           <br />
@@ -38,18 +25,13 @@ function ProfilePage() {
         </p>
       </div>
 
-      <div>
+      {/* <div>
         <h3>My Events</h3>
         <ul>
-          {events.map((event) => (
-            <li key={event.id}>
-              {event.title} - {event.date}
-            </li>
-          ))}
         </ul>
       </div>
 
-      <Link to="/eventCreationPage">Create Event</Link>
+      <Link to="../pages/eventCreationPage">Create Event</Link> */}
 
       <LogOut />
     </>
