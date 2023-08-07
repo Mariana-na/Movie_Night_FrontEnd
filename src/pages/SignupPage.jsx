@@ -20,7 +20,7 @@ function SignupPage() {
 
             console.log("signup response", response)
 
-            navigate("/profile/:userId");
+            navigate("/profile");
 
         } catch (error) {
             console.log(error);

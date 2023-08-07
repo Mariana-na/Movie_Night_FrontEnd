@@ -1,8 +1,14 @@
 import React from 'react'
+import CommentAndButtonsForm from '../components/CommentAndButtonsForm'
+import "../App.css";
 
 function EventDetailPage() {
   return (
-    <div>EventDetailPage</div>
+    <>
+      <h1>Movie Night</h1>
+      <CommentAndButtonsForm/>
+    </>
+
   )
 }
 

@@ -6,7 +6,7 @@ import EventDetailPage from "./pages/EventDetailPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
 import SignupPage from "./pages/SignupPage";
-// import IsPrivate from "./components/IsPrivate";
+import IsPrivate from "./components/IsPrivate";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
 
         <Route path="/profile" element={<IsPrivate><ProfilePage/></IsPrivate>}/>
         <Route path="/eventCreation" element={<IsPrivate><EventCreationPage/></IsPrivate>}/>
-        <Route path="/eventDetails/:eventId" element={<IsPrivate><EventDetailPage/></IsPrivate>}/>
+        <Route path="/eventDetails" element={<IsPrivate><EventDetailPage/></IsPrivate>}/>
         <Route path="*" element={<h1>404 page</h1>}/>
       </Routes>
     </>
