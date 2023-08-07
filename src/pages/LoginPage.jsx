@@ -1,13 +1,13 @@
 import {useContext, useState} from "react";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {AuthContext} from "../context/Auth.context";
 
 const LoginPage = () => {
 
     const [email, setEmail] = useState ("");
     const [password, setPassword] = useState ("");
-  //  const [errorMessage, setErrorMessage] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(undefined);
     const { authenticateUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -18,12 +18,14 @@ const LoginPage = () => {
         try {
             const response = await axios.post("http://localhost:5005/auth/login", {email, password})
 
-            console.log("Login response", response)
+            if(response.status === 202) {
+            console.log("Login response", response.data)
 
-            localStorage.setItem("authToken", response.token);
-            await authenticateUser;
+            localStorage.setItem("authToken", response.data);
+            await authenticateUser();
+            navigate("/profile");
+            }
 
-            navigate("/profile/:userId");
 
         } catch (error) {
             console.log(error);
@@ -36,18 +38,25 @@ const LoginPage = () => {
 
     return (
         <>
-            <h2>Login Page</h2>
+            <h1>Movie Night</h1>
             <form onSubmit={handleLogin} >
-            <label>
+                <label>
                     Email:
                     <input type="text" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
                 </label>
+                <br />
                 <label>
                     Password:
                     <input type="password" required value={password} onChange={(event) => {setPassword(event.target.value); }}/>
                 </label>
+                <br /> <br />
                 <button type="submit" >Log In</button>
             </form>
+
+            { errorMessage && <p>{errorMessage}</p> }
+
+            <p>Don't have an account yet?</p>
+            <Link to={"/signup"}> Sign Up</Link>
 
 
         </>

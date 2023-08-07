@@ -3,6 +3,7 @@ import { AuthContext } from "../context/Auth.context";
 import { useNavigate } from "react-router-dom";
 
 function IsPrivate ({children}) {
+    
     const {isLoading, isLoggedIn} = useContext(AuthContext);
     const navigate = useNavigate();
 
