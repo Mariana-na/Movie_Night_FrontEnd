@@ -1,10 +1,12 @@
 import { useState } from "react";
 
-function EventLogistics() {
+function EventLogistics(props) {
 
-    const [when, setWhen] = useState("");
-    const [where, setWhere] = useState("");
-    const [who, setWho] = useState("");
+    const {when, setWhen, where, setWhere, who, setWho} = props;
+
+   // const [when, setWhen] = useState("");
+    //const [where, setWhere] = useState("");
+    //const [who, setWho] = useState("");
 
     const handleWhenInput = e => setWhen(e.target.value);
     const handleWhereInput = e => setWhere(e.target.value);
@@ -19,7 +21,7 @@ function EventLogistics() {
     return (
       <div className="logistics">
         <h3>When? Where? Who?</h3>
-        <form onSubmit={handleSubmit}>
+       {/* <form onSubmit={handleSubmit}> */}
           <label>When? </label>
           <input
             type="text"
@@ -37,8 +39,8 @@ function EventLogistics() {
           <label>Who? </label>
           <input type="text" name="who" value={who} onChange={handleWhoInput} />
 
-          <button type="submit">Confirm</button>
-        </form>
+         {/* <button type="submit">Confirm</button> */}
+        {/* form */}
       </div>
     );
 

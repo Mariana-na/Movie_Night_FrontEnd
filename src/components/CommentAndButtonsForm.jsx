@@ -51,7 +51,7 @@ function CommentAndButtonsForm() {
         <button onClick={handleAttending} className={`${
           attending ? 'attending-button-selected' : ''
         }`} > 
-        I'm comming </button>
+        I'm coming </button>
 
         <button onClick={handleNotAttending} className={`${
           notAttending ? 'not-attending-button-selected' : ''

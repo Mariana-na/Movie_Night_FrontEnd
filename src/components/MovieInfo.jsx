@@ -33,7 +33,7 @@ function MovieInfo() {
   return (
     <>
       <p>Name: {randomMovie && randomMovie.name}</p>
-      <p>Rating: {randomMovie && randomMovie.aggregateRating.ratingValue}</p>
+      {/*<p>Rating: {randomMovie && randomMovie.aggregateRating.ratingValue}</p> */}
       <p>Year: {randomMovie && randomMovie.datePublished}</p>
       <p>Genre(s): {randomMovie && randomMovie.genre}</p>
       <img src={randomMovie && randomMovie.image} />
