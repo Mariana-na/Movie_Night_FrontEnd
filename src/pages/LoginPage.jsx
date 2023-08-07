@@ -7,6 +7,7 @@ const LoginPage = () => {
 
     const [email, setEmail] = useState ("");
     const [password, setPassword] = useState ("");
+    // eslint-disable-next-line no-unused-vars
     const [errorMessage, setErrorMessage] = useState(undefined);
     const { authenticateUser } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -55,7 +56,7 @@ const LoginPage = () => {
 
             { errorMessage && <p>{errorMessage}</p> }
 
-            <p>Don't have an account yet?</p>
+            <p>Dont have an account yet?</p>
             <Link to={"/signup"}> Sign Up</Link>
 
 

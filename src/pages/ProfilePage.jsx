@@ -1,4 +1,3 @@
-import React from 'react';
 import LogOut from '../components/LogOut';
 import {Link} from "react-router-dom";
 
