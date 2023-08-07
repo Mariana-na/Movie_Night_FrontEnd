@@ -6,7 +6,7 @@ import EventDetailPage from "./pages/EventDetailPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
 import SignupPage from "./pages/SignupPage";
-// import IsPrivate from "./components/IsPrivate";
+import IsPrivate from "./components/IsPrivate";
 
 function App() {
   return (
