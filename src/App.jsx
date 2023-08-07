@@ -6,7 +6,7 @@ import EventDetailPage from "./pages/EventDetailPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
 import SignupPage from "./pages/SignupPage";
-import IsPrivate from "./components/IsPrivate";
+// import IsPrivate from "./components/IsPrivate";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route path="/" element={<HomePage />}/>
         <Route path="/signup" element={<SignupPage />}/>
         <Route path="/login" element={<LoginPage />}/>
+
 
         <Route path="/profile" element={<IsPrivate><ProfilePage/></IsPrivate>}/>
         <Route path="/eventCreation" element={<IsPrivate><EventCreationPage/></IsPrivate>}/>

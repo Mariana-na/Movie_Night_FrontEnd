@@ -3,9 +3,9 @@ import {useContext} from "react";
 import {AuthContext} from "../context/Auth.context";
 import { useState } from "react";
 
+
 function navbar() {
     const {isLoggedIn, user, logoutUser, isLoading} = useContext(AuthContext);
-
 
 
     return (
@@ -39,4 +39,4 @@ function navbar() {
     )
 }
 
-export default navbar;
+export default NavBar;

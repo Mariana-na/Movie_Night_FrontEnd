@@ -1,9 +1,11 @@
-import React from 'react'
+import RecipeInfo from "../components/RecipeInfo";
 
 function EventCreationPage() {
   return (
-    <div>EventCreationPage</div>
-  )
+    <>
+      <RecipeInfo />
+    </>
+  );
 }
 
-export default EventCreationPage
+export default EventCreationPage;
