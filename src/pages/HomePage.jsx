@@ -4,6 +4,14 @@ import MealPrefDropDown from "../components/mealPrefDropDown";
 import NavBar from "../components/NavBar";
 
 function HomePage() {
+  const handleSomeFunction = () => {
+    console.log("You clicked the button!");
+  };
+
+  const handleMakeMyNight = () => {
+    console.log("Make My Night clicked");
+  };
+
   return (
     <>
         <NavBar/>
@@ -23,7 +31,7 @@ function HomePage() {
         <h3>Refine your suggestions</h3>
         <h2>Have a great night!</h2>
     </>
-  )
+  );
 }
 
 export default HomePage;
