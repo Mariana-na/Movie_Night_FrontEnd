@@ -20,7 +20,7 @@ function SignupPage() {
 
             console.log("signup response", response)
 
-            navigate("/profile");
+            navigate("/login");
 
         } catch (error) {
             console.log(error);
