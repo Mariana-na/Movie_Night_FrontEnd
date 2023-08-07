@@ -26,7 +26,6 @@ function ProfilePage() {
     };
   };
 
-
   return (
     <>
       <div>
