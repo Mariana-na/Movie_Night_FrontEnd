@@ -1,18 +1,17 @@
-// import React from 'react';
+
 import LogOut from '../components/LogOut';
 import {Link} from "react-router-dom";
 import Navbar from '../components/navbar';
 import { AuthContext } from '../context/Auth.context';
 import { useContext } from 'react';
 
-/////////////////////////// Hamed codes Start //////////////////////////
 
 function ProfilePage() {
   const { user } = useContext(AuthContext);
 
   return (
     <>
-      <Navbar />
+      <NavBar />
       <div>
         <h2>Profile Page</h2>
 
@@ -20,7 +19,8 @@ function ProfilePage() {
         
         <p>
           Username: {user.name}
-          <br />
+        </p>
+         <p>
           Email: {user.email}
         </p>
       </div>
@@ -37,21 +37,5 @@ function ProfilePage() {
     </>
   );
 }
-
-/////////////////////////// Hamed codes End //////////////////////////
-
-
-// function ProfilePage() {
-
-//   return (
-//     <>
-//       <div>ProfilePage</div>
-//       <Link to="/eventCreation">Create Event</Link>
-  
-//         {/* Log out button */}
-//         <LogOut />
-//     </>
-//     );
-// }
 
 export default ProfilePage
