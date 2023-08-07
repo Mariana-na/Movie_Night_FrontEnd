@@ -1,8 +1,9 @@
-import React from 'react';
+// import React from 'react';
 import LogOut from '../components/LogOut';
 import {Link} from "react-router-dom";
-
-import React, { useEffect, useState } from 'react';
+import navbar from '../components/navbar';
+ 
+import { useEffect, useState } from 'react';
 
 
 /////////////////////////// Hamed codes Start //////////////////////////

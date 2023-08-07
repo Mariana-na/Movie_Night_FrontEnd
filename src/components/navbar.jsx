@@ -1,10 +1,10 @@
 import {Link} from "react-router-dom";
 import {useContext} from "react";
 import {AuthContext} from "../context/Auth.context";
-import { useState } from "react";
+// import { useState } from "react";
 
 
-function navbar() {
+function Navbar() {
     const {isLoggedIn, user, logoutUser, isLoading} = useContext(AuthContext);
 
 
@@ -39,4 +39,4 @@ function navbar() {
     )
 }
 
-export default NavBar;
+export default Navbar;
