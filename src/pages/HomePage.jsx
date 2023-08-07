@@ -16,7 +16,8 @@ function HomePage() {
         <br />
 
 
-        <button>Make My Night!</button>
+        <button type="button" ><Link to="/eventCreation" >Make My Night!</Link></button>
+        
 
         <h4>Press the button</h4>
         <h3>Refine your suggestions</h3>

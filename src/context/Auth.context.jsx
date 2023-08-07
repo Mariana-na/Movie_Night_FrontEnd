@@ -11,16 +11,17 @@ const AuthContextWrapper = ({ children }) => {
   const authenticateUser = async () => {
 
     const tokenInStorage = localStorage.getItem("authToken");
+    console.log(tokenInStorage)
 
     if (tokenInStorage) {
       try {
-        const { data } = await axios.get("http://localhost:5005/auth/verify", {
-          headers: { authorization: `Bearer ${tokenInStorage}` },
+        const response = await axios.get("http://localhost:5005/auth/verify", {
+          headers: { Authorization: `Bearer ${tokenInStorage}` },
         });
-        console.log("from the context, here is the verify response", data);
-        setUser(data.currentUser);
-        setIsLoading(false);
+        console.log("from the context, here is the verify response", response);
+        setUser(response.data.currentUser);
         setIsLoggedIn(true);
+        setIsLoading(false);
       } catch (err) {
         console.log("error on the authenticate user function", err);
         setUser(null);
@@ -36,20 +37,11 @@ const AuthContextWrapper = ({ children }) => {
 
   };
 
-  const removeToken = () => {
+  const logoutUser = () => {
     localStorage.removeItem("authToken");
+    authenticateUser();
   }
-  const logoutUser = async () => {
-    try {
-      await axios.post("http://localhost:5005/auth/logout");
-      removeToken();
-      setIsLoggedIn(false);
-      setUser(null);
-      console.log("Logout successful");
-    } catch (error) {
-      console.error("Error logging out:", error);
-    }
-  };
+
 
 
 

@@ -16,9 +16,9 @@ function App() {
         <Route path="/signup" element={<SignupPage />}/>
         <Route path="/login" element={<LoginPage />}/>
 
-        <Route path="/profile/:userId" element={<ProfilePage/>}/>
-        <Route path="/eventCreation" element={ <EventCreationPage/>}/>
-        <Route path="/eventDetails/:eventId" element={<EventDetailPage/>}/>
+        <Route path="/profile" element={<IsPrivate><ProfilePage/></IsPrivate>}/>
+        <Route path="/eventCreation" element={<IsPrivate><EventCreationPage/></IsPrivate>}/>
+        <Route path="/eventDetails/:eventId" element={<IsPrivate><EventDetailPage/></IsPrivate>}/>
         <Route path="*" element={<h1>404 page</h1>}/>
       </Routes>
     </>

@@ -18,12 +18,14 @@ const LoginPage = () => {
         try {
             const response = await axios.post("http://localhost:5005/auth/login", {email, password})
 
-            console.log("Login response", response)
+            if(response.status === 202) {
+            console.log("Login response", response.data)
 
-            localStorage.setItem("authToken", response.token);
-            await authenticateUser;
+            localStorage.setItem("authToken", response.data);
+            await authenticateUser();
+            navigate("/profile");
+            }
 
-            navigate("/");
 
         } catch (error) {
             console.log(error);
