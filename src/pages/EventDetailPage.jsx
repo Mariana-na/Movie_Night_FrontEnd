@@ -1,6 +1,8 @@
+
 import React from 'react'
 import CommentAndButtonsForm from '../components/CommentAndButtonsForm'
 import "../App.css";
+
 
 function EventDetailPage() {
   return (
