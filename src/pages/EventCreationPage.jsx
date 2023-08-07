@@ -1,9 +1,9 @@
-import LargeInfoLeft from "../components/RecipeInfo";
+import RecipeInfo from "../components/RecipeInfo";
 
 function EventCreationPage() {
   return (
     <>
-      <LargeInfoLeft />
+      <RecipeInfo />
     </>
   );
 }
