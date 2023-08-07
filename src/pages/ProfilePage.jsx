@@ -2,19 +2,30 @@ import React from 'react';
 import LogOut from '../components/LogOut';
 import {Link} from "react-router-dom";
 
+import React, { useEffect, useState } from 'react';
+
 
 /////////////////////////// Hamed codes Start //////////////////////////
-function ProfilePage() {
 
-  const user = {
-    name: "",
-    email: "",
+function ProfilePage() {
+  const [user, setUser] = useState({ name: "", email: "" });
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const userData = await fetchUserDataFromAPI();
+      setUser(userData);
+    };
+
+    fetchUserData();
+  }, []);
+
+  const fetchUserDataFromAPI = async () => {
+    return {
+      name: "John Doe",
+      email: "john@example.com",
+    };
   };
 
-  const events = [
-    { id: 1, title: "", date: "" },
-    { id: 2, title: "", date: "" },
-  ];
 
   return (
     <>
