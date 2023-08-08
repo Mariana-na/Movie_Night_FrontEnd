@@ -6,8 +6,8 @@ import NavBar from "../components/NavBar";
 import axios from "axios";
 import { API_URL } from "../config/config.index";
 import { useNavigate } from "react-router-dom";
-//import { AuthContext } from "../context/Auth.context";
-//import { useContext } from "react";
+import { AuthContext } from "../context/Auth.context";
+import { useContext } from "react";
 
 
 
@@ -23,19 +23,25 @@ function EventCreationPage() {
 
 // Information from the RecipeInfo component
   const [randomMeal, setRandomMeal] = useState(null);
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
- // const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
+  const userId = user._id
+
   
   const handleEventCreation = async (event) => {
         event.preventDefault()
 
+
         try {
-            const newEvent = await axios.post(`${API_URL}/event/createEvent`, {eventName, when, where, who, randomMeal})
+            const newEvent = await axios.post(`${API_URL}/event/createEvent`, {eventName, when, where, who, randomMeal, userId });
+
 
             console.log("event creation response", newEvent)
 
-            navigate("/eventDetails");
+            const eventId = newEvent.data._id
+
+            navigate(`/eventDetails/${eventId}`);
 
         } catch (error) {
             console.log(error);

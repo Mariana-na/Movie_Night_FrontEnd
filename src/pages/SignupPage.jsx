@@ -5,8 +5,7 @@ import {API_URL} from "../config/config.index";
 
 function SignupPage() {
 
-    const [firstname, setFirstname] = useState("");
-    const [lastname, setLastname] = useState("");
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     // eslint-disable-next-line no-unused-vars
@@ -18,7 +17,7 @@ function SignupPage() {
         event.preventDefault()
 
         try {
-            const response = await axios.post(`${API_URL}/auth/signup`, {firstname, email, password})
+            const response = await axios.post(`${API_URL}/auth/signup`, {name, email, password})
 
             console.log("signup response", response)
 
@@ -35,13 +34,8 @@ function SignupPage() {
             <h1>Movie Night</h1>
             <form onSubmit={handleSignup} >
                 <label>
-                    First Name:
-                    <input placeholder="Your real name. Or a nickname" type="text" required value={firstname} onChange={(event) => {setFirstname(event.target.value); }}/>
-                </label>
-                <br />
-                <label>
-                    Last Name:
-                    <input placeholder="Makes it easier for your friends to recognise you" type="text" value={lastname} onChange={(event) => {setLastname(event.target.value); }}/>
+                    Name:
+                    <input placeholder="Your real name. Or a nickname" type="text" required value={name} onChange={(event) => {setName(event.target.value); }}/>
                 </label>
                 <br />
                 <label>

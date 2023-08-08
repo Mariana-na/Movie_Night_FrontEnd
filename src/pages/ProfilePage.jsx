@@ -1,5 +1,4 @@
 
-//import LogOut from '../components/LogOut';
 import {Link} from "react-router-dom";
 import NavBar from '../components/NavBar';
 import { AuthContext } from '../context/Auth.context';
@@ -11,6 +10,7 @@ import EventCreationPage from './EventCreationPage';
 function ProfilePage() {
   const { user } = useContext(AuthContext);
 
+
   return (
     <>
       <NavBar/>
@@ -20,7 +20,7 @@ function ProfilePage() {
         //////////////// Picture //////////////
         
         <p>
-          Username: {user.name}
+          Name: {user.name}
         </p>
          <p>
           Email: {user.email}
@@ -35,7 +35,6 @@ function ProfilePage() {
 
       <Link to="../pages/eventCreationPage">Create Event</Link> */}
       <button type="button" ><Link to="/eventCreation" >Create an Event</Link></button>
-      {/* <LogOut /> */}
     </>
   );
 }
