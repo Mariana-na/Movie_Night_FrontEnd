@@ -41,6 +41,8 @@ function RecipeInfo(props) {
       <p>Recipe: {randomMeal && randomMeal.meals[0].strSource}</p>
       <p>YouTube: {randomMeal && randomMeal.meals[0].strYouTube}</p>
       <img src={randomMeal && randomMeal.meals[0].strMealThumb} />
+
+      
     </>
   );
 }
