@@ -1,15 +1,16 @@
 import React from 'react'
 import {useState, useEffect} from "react";
 import axios from "axios";
+import {API_URL} from "../config/config.index";
 
 function Comments({eventId}) {
 
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState("");
 
-    const getComment = async () => {
+    const getComments = async () => {
         try {
-            const response = await axios.get("http://localhost:5005/feedback/:feedbackId");
+            const response = await axios.get(`${API_URL}/${eventId}/feedback`);
             setComments(response.data);
 
         } catch (error) {
@@ -19,21 +20,34 @@ function Comments({eventId}) {
 
     const postComment = async () => {
         try {
-            
+            await axios.post(`${API_URL}/${eventId}/feedback`, {text: newComment});
+            setNewComment("");
+            getComments();
 
         } catch (error) {
             console.error('Error posting comment:', error);
         }
     }
 
+    useEffect(() => {
+        getComments();
+    }, []);
+
   return (
         <>
-            <form o/* nSubmit={handleSendComment} */>
+            <form onSubmit={handlePostComment}>
                  <textarea cols="30" rows="10" value = {newComment} onChange={(event) => setNewComment(event.target.value)}></textarea>
                 <button type="submit">Send</button>
             </form>
+
+            <ul>
+                {comments.map(comment => (
+                <li key={comment.id}>{comment.text}</li>
+                ))}
+            </ul>
+
         </>
   )
 }
 
-export default Comments
+export default Comments;

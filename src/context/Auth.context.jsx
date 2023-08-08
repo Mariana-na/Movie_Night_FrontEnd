@@ -1,5 +1,6 @@
 import { useState, createContext, useEffect } from "react";
 import axios from "axios";
+import {API_URL} from "../config/config.index";
 
 const AuthContext = createContext();
 
@@ -15,7 +16,7 @@ const AuthContextWrapper = ({ children }) => {
 
     if (tokenInStorage) {
       try {
-        const response = await axios.get("http://localhost:5005/auth/verify", {
+        const response = await axios.get(`${API_URL}/auth/verify`, {
           headers: { Authorization: `Bearer ${tokenInStorage}` },
         });
         console.log("from the context, here is the verify response", response);

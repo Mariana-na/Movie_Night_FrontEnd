@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState} from "react";
 import axios from "axios";
+import {API_URL} from "../config/config.index";
 import "../App.css";
 
 function CommentAndButtonsForm() {
@@ -18,7 +19,7 @@ function CommentAndButtonsForm() {
     const handleAttending = async () => {
 
         try {
-            const response = await axios.post("http://localhost:5005/event/:eventId/attending");
+            const response = await axios.post(`${API_URL}/event/:eventId/attending`);
             setAttending(response.data.attendingCount);
             setNotAttending(0);
             
@@ -30,7 +31,7 @@ function CommentAndButtonsForm() {
     const handleNotAttending = async () => {
 
         try {
-            const response = await axios.post("http://localhost:5005/api/:eventId/notAttending");
+            const response = await axios.post(`${API_URL}/api/:eventId/notAttending`);
             setNotAttending(response.data.notAttendingCount);
             setAttending(0);
             

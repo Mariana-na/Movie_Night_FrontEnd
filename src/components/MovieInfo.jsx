@@ -2,12 +2,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "./MovieInfo.css";
+import {API_URL} from "../config/config.index";
 
 // Function to fetch the JSON object
 async function fetchRandomMovie() {
   try {
     const response = await axios.get(
-      "http://localhost:5005/api/randomMovie"
+      `${API_URL}/api/randomMovie`
     );
     const movie = response.data;
     console.log("From fRM function", movie);
