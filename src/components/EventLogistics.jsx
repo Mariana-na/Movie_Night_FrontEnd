@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function EventLogistics(props) {
 
+    // eslint-disable-next-line react/prop-types
     const {when, setWhen, where, setWhere, who, setWho} = props;
 
    // const [when, setWhen] = useState("");
@@ -11,11 +12,11 @@ function EventLogistics(props) {
     const handleWhenInput = e => setWhen(e.target.value);
     const handleWhereInput = e => setWhere(e.target.value);
     const handleWhoInput = e => setWho(e.target.value);
-    const handleSubmit = e => {
-        e.preventDefault();
-        const newLogistics = { when, where, who }
-        console.log(newLogistics);
-}
+//     const handleSubmit = e => {
+//         e.preventDefault();
+//         const newLogistics = { when, where, who }
+//         console.log(newLogistics);
+// }
 
 
     return (
