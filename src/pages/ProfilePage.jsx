@@ -1,9 +1,10 @@
 
 import LogOut from '../components/LogOut';
 import {Link} from "react-router-dom";
-import Navbar from '../components/navbar';
+import NavBar from '../components/NavBar';
 import { AuthContext } from '../context/Auth.context';
 import { useContext } from 'react';
+//import {API_URL} from "../config/config.index";
 
 
 function ProfilePage() {
@@ -11,7 +12,7 @@ function ProfilePage() {
 
   return (
     <>
-      <NavBar />
+      <NavBar/>
       <div>
         <h2>Profile Page</h2>
 

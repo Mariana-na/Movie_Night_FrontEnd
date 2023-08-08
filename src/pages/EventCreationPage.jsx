@@ -2,6 +2,8 @@ import RecipeInfo from "../components/RecipeInfo";
 import EventLogistics from "../components/EventLogistics";
 import MovieInfo from "../components/MovieInfo";
 import {useState} from "react";
+import NavBar from "../components/NavBar";
+//import {API_URL} from "../config/config.index";
 
 function EventCreationPage() {
 
@@ -19,6 +21,7 @@ function EventCreationPage() {
   };
   return (
     <div>
+      <NavBar/>
       <MovieInfo/>
       <RecipeInfo />
       <form onSubmit={handleFormSubmit}>
