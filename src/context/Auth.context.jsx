@@ -4,6 +4,7 @@ import {API_URL} from "../config/config.index";
 
 const AuthContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 const AuthContextWrapper = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);

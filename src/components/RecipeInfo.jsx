@@ -6,6 +6,8 @@ import "./RecipeInfo.css";
 
 // Function to fetch the JSON object
 async function fetchRandomMeal() {
+
+
   try {
     const response = await axios.get(
       "https://www.themealdb.com/api/json/v1/1/random.php"
@@ -18,8 +20,9 @@ async function fetchRandomMeal() {
   }
 }
 
-function RecipeInfo() {
-  const [randomMeal, setRandomMeal] = useState(null);
+function RecipeInfo(props) {
+  const { randomMeal, setRandomMeal } = props;
+  //  const [randomMeal, setRandomMeal] = useState(null);
 
   useEffect(() => {
     const getRandomMeal = async () => {
@@ -37,7 +40,7 @@ function RecipeInfo() {
       <p>Area: {randomMeal && randomMeal.meals[0].strArea}</p>
       <p>Recipe: {randomMeal && randomMeal.meals[0].strSource}</p>
       <p>YouTube: {randomMeal && randomMeal.meals[0].strYouTube}</p>
-      <img src={randomMeal && randomMeal.meals[0].strMealThumb}  />
+      <img src={randomMeal && randomMeal.meals[0].strMealThumb} />
     </>
   );
 }
