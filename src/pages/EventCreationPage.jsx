@@ -34,11 +34,14 @@ function EventCreationPage() {
 
 
         try {
-            const newEvent = await axios.post(`${API_URL}/event/createEvent`, {eventName, when, where, who, randomMeal, userId })
+            const newEvent = await axios.post(`${API_URL}/event/createEvent`, {eventName, when, where, who, randomMeal, userId });
+
 
             console.log("event creation response", newEvent)
 
-            navigate("/eventDetails");
+            const eventId = newEvent.data._id
+
+            navigate(`/eventDetails/${eventId}`);
 
         } catch (error) {
             console.log(error);

@@ -19,7 +19,7 @@ function App() {
 
         <Route path="/profile" element={<IsPrivate><ProfilePage/></IsPrivate>}/>
         <Route path="/eventCreation" element={<IsPrivate><EventCreationPage/></IsPrivate>}/>
-        <Route path="/eventDetails" element={<IsPrivate><EventDetailPage/></IsPrivate>}/>
+        <Route path="/eventDetails/:eventId" element={<IsPrivate><EventDetailPage/></IsPrivate>}/>
         <Route path="*" element={<h1>404 page</h1>}/>
       </Routes>
     </>
