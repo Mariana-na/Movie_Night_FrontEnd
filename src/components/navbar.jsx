@@ -17,7 +17,7 @@ function NavBar() {
                 {!isLoading ? (
                     isLoggedIn ? (
                       <>
-                        <Link to="/profile/:userId">
+                        <Link to="/profile">
                           <button>Profile</button>
                         </Link>
                         <button onClick={logoutUser}>Logout</button>
