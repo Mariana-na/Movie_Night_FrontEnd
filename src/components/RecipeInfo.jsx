@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "./RecipeInfo.css";
 
+
 // Function to fetch the JSON object
 async function fetchRandomMeal() {
   try {
