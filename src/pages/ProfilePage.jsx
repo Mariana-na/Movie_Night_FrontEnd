@@ -1,9 +1,10 @@
 
-import LogOut from '../components/LogOut';
+//import LogOut from '../components/LogOut';
 import {Link} from "react-router-dom";
 import NavBar from '../components/NavBar';
 import { AuthContext } from '../context/Auth.context';
 import { useContext } from 'react';
+import EventCreationPage from './EventCreationPage';
 //import {API_URL} from "../config/config.index";
 
 
@@ -33,8 +34,8 @@ function ProfilePage() {
       </div>
 
       <Link to="../pages/eventCreationPage">Create Event</Link> */}
-
-      <LogOut />
+      <button type="button" ><Link to="/eventCreation" >Create an Event</Link></button>
+      {/* <LogOut /> */}
     </>
   );
 }
