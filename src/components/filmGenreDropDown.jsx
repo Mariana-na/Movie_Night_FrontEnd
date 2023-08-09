@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState} from "react";
+import "../assets/style/home.css";
 
 function FilmGenreDropDown() {
 
@@ -8,6 +9,7 @@ function FilmGenreDropDown() {
 
   return (
     <>
+    <section className='film-genre'>
         <select value={genre} onChange = {(event) => {setGenre(event.target.value)}} >
             <option value="Film Genre...">Film Genre...</option>
             <option value="Action">Action</option>
@@ -20,6 +22,7 @@ function FilmGenreDropDown() {
             <option value="Animation">Animation</option>
             <option value="Documentary">Documentary</option>
         </select>
+        </section>
     </>
   )
 }

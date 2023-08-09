@@ -2,6 +2,7 @@ import {Link} from "react-router-dom";
 import FilmGenreDropDown from "../components/filmGenreDropDown";
 import MealPrefDropDown from "../components/mealPrefDropDown";
 import Navbar from "../components/navbar";
+import "../assets/style/home.css";
 
 function HomePage() {
   const handleSomeFunction = () => {
@@ -16,20 +17,20 @@ function HomePage() {
     <>
         <Navbar/>
 
-        <h1>Movie Night</h1>
+        <h1 className="header"><b>Movie</b>Night</h1>
 
-        <FilmGenreDropDown />
+       <div className="home-div"><FilmGenreDropDown /></div>
+       <div className="home-div"><MealPrefDropDown/></div>
+        
         <br />
-        <MealPrefDropDown/>
-        <br />
 
 
-        <button type="button" ><Link to="/eventCreation" >Make My Night!</Link></button>
+        <button className="homePage-mk-btn" type="button" ><Link to="/eventCreation" >Make My Night!</Link></button>
         
 
-        <h4>Press the button</h4>
-        <h3>Refine your suggestions</h3>
-        <h2>Have a great night!</h2>
+        <h5 className="home-text">Press the button</h5>
+        <h4 className="home-text">Refine your suggestions</h4>
+        <h2 className="home-text">Have a great night!</h2>
     </>
   );
 }

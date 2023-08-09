@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import Navbar from '../components/navbar';
 import { AuthContext } from '../context/Auth.context';
 import { useContext } from 'react';
+import "../assets/style/home.css";
 
 /////////////////////////// Hamed codes Start //////////////////////////
 

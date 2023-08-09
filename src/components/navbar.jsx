@@ -1,17 +1,20 @@
-import {Link} from "react-router-dom";
+import {Link, useLocation } from "react-router-dom";
 import {useContext} from "react";
 import {AuthContext} from "../context/Auth.context";
 // import { useState } from "react";
+import "../assets/style/home.css";
 
 
 function Navbar() {
     const {isLoggedIn, user, logoutUser, isLoading} = useContext(AuthContext);
 
+    const location = useLocation();
 
     return (
         <nav>
-            <Link to= "/"><button>Home</button></Link> {/*Make it not show up in HomePage */}
-
+           {location.pathname !== "/" && (
+            <Link to= "/"><button>Home</button></Link> /*Make it not show up in HomePage */
+           )}
 
                 {!isLoading ? (
                     isLoggedIn ? (
@@ -24,12 +27,14 @@ function Navbar() {
                       </>
                     ) : (
                       <>
+                      <section className="nav-btn">
                         <Link to="/signup">
-                          <button>Sign Up</button>
+                          <button className="nav-btn-sign">Sign Up</button>
                         </Link>
                         <Link to="/login">
-                          <button>Login</button>
+                          <button className="nav-btn-login">Login</button>
                         </Link>
+                        </section>
                       </>
                     )
                   ) : null}

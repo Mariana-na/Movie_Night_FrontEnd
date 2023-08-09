@@ -2,6 +2,8 @@ import {useContext, useState} from "react";
 import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
 import {AuthContext} from "../context/Auth.context";
+import "../assets/style/home.css";
+
 
 const LoginPage = () => {
 
@@ -38,25 +40,29 @@ const LoginPage = () => {
 
     return (
         <>
-            <h1>Movie Night</h1>
+        <br />
+
+        <Link to={"/"} className="home-btn">Home</Link>
+
+            <h1 className="login-title"><b>Movie</b>Night</h1>
             <form onSubmit={handleLogin} >
                 <label>
-                    Email:
-                    <input type="text" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
+                   <p className="login-text">Email:</p> 
+                    <input className="login-input" type="text" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
                 </label>
                 <br />
                 <label>
-                    Password:
-                    <input type="password" required value={password} onChange={(event) => {setPassword(event.target.value); }}/>
+                    <p className="login-text">Password:</p>
+                    <input className="login-input" type="password" required value={password} onChange={(event) => {setPassword(event.target.value); }}/>
                 </label>
                 <br /> <br />
-                <button type="submit" >Log In</button>
+                <button className="login-btn" type="submit" >Log In</button>
             </form>
 
             { errorMessage && <p>{errorMessage}</p> }
 
             <p>Don't have an account yet?</p>
-            <Link to={"/signup"}> Sign Up</Link>
+            <Link to={"/signup"} className="login-signup"> Sign Up</Link>
 
 
         </>

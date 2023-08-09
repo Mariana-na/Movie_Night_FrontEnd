@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState} from "react";
+import "../assets/style/home.css";
 
 function MealPrefDropDown() {
 
@@ -8,6 +9,7 @@ function MealPrefDropDown() {
 
   return (
     <>
+    
         <select value={meal} onChange = {(event) => {setmeal(event.target.value)}} >
             <option value="Meal Preferences...">Meal Preferences...</option>
             <option value="American">American</option>
