@@ -32,6 +32,16 @@ function EventDetailPage() {
     }
   }
 
+  const updateEvent = async (event) => {
+    try {
+      const editedEvent = await axios.post(`${API_URL}/event/${eventId}`);
+
+    } catch (error) {
+      console.log(error)
+      
+    }
+  }
+
   useEffect (() => {
     fetchEvent ()
 }, [])
@@ -41,9 +51,21 @@ function EventDetailPage() {
   return (
     <>
       <NavBar/>
-      <h1>Movie Night</h1>
-      <p>{eventInfo.eventDate}</p>
-      <p>{eventInfo.eventLocation} </p>
+      {eventInfo ? ( // Conditional rendering
+        <div>
+          <h1>{eventInfo.eventName}</h1>
+          <p>{eventInfo.userId.name}</p>
+          <p>{eventInfo.recipeId}</p>
+          <p>{eventInfo.eventDate}</p>
+          <p>{eventInfo.eventLocation}</p>
+          <p>{eventInfo.attendees}</p>
+        </div>
+      ) : (
+        <p>Loading event details...</p>
+      )}
+
+        <button onClick="handleEdit">Edit Event</button>
+
       <Comments/>
       {/* <CommentAndButtonsForm/> */}
     </>
