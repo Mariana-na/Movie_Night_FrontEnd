@@ -1,31 +1,33 @@
-import React from 'react'
-import Comments from '../components/Comments';
-import NavBar from '../components/NavBar';
-import { useEffect } from 'react';
-import axios from 'axios';
-import {API_URL} from "../config/config.index";
-import {useParams} from "react-router-dom";
-import { useState } from 'react';
-import EventEditForm from '../components/EventEditForm';
 import "../App.css";
+import React from 'react';
+import axios from 'axios';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import NavBar from '../components/NavBar';
+import {useParams} from "react-router-dom";
+import Comments from '../components/Comments';
+import {API_URL} from "../config/config.index";
+import { useNavigate } from "react-router-dom";
+import EventEditForm from '../components/EventEditForm';
+import { AuthContext } from "../context/Auth.context";
+import { useContext } from "react";
 
 
 function EventDetailPage() {
 
   const [eventInfo, setEventInfo] = useState(null);
   const { eventId } = useParams();
-
   const [isEditing, setIsEditing] = useState(false);
-
   const [propEventId, setpropEventId] = useState(eventId);
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+
 
 
   const fetchEvent = async (event) => {
 
     try {
       const displayEvent = await axios.get(`${API_URL}/event/${eventId}`);
-
-      //{eventName, userId.name, recipeId.name, when, where, who}
 
       const eventInfo = displayEvent.data;
       setEventInfo(displayEvent.data);
@@ -36,6 +38,10 @@ function EventDetailPage() {
       console.log(error);
     }
   }
+
+  const eventCreatorId = eventInfo ? eventInfo.userId : null; // Extract creator ID from eventInfo
+
+  const isCurrentUserEventCreator = user && user._id === eventCreatorId;
 
 
   const handleEdit = () => {
@@ -55,21 +61,21 @@ function EventDetailPage() {
     }
   }
 
-
-/*   const updateEvent = async (event) => {
+  const handleDelete = async () => {
     try {
-      const editedEvent = await axios.post(`${API_URL}/event/${eventId}`);
+      await axios.delete(`${API_URL}/event/${eventId}`)
+
+      navigate("/");
 
     } catch (error) {
       console.log(error)
-      
     }
-  } */
+  }
+
 
   useEffect (() => {
     fetchEvent ()
 }, [])
-
 
 
   return (
@@ -89,7 +95,12 @@ function EventDetailPage() {
           <p>{eventInfo.eventDate}</p>
           <p>{eventInfo.eventLocation}</p>
           {/* <p>{eventInfo.attendees}</p> */}
-          <button onClick={handleEdit}>Edit Event</button>
+          {isCurrentUserEventCreator && (
+            <div>
+              <button onClick={handleEdit}>Update Event</button>
+              <button onClick={handleDelete}>Delete Event</button>
+            </div>
+          )}
           </div>
         )}
         </div>
