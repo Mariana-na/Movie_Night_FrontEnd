@@ -12,18 +12,18 @@ function NavBar() {
     const location = useLocation();
 
     return (
-        <nav>
+        <nav className="pages-nav-btn">
            {location.pathname !== "/" && (
-            <Link to= "/"><button>Home</button></Link> /*Make it not show up in HomePage */
+            <Link to= "/"><button className="btns">Home</button></Link> /*Make it not show up in HomePage */
            )}
 
                 {!isLoading ? (
                     isLoggedIn ? (
                       <>
-                        <Link to="/profile/:userId">
-                          <button>Profile</button>
+                        <Link to="/profile">
+                          <button className="btns">Profile</button>
                         </Link>
-                        <button onClick={logoutUser}>Logout</button>
+                        <button className="btns" onClick={logoutUser}>Logout</button>
                         <span>{user && user.name}</span>
                       </>
                     ) : (

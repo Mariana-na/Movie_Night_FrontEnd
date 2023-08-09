@@ -18,26 +18,28 @@ function EventLogistics() {
 
     return (
       <div className="logistics">
-        <h3>When? Where? Who?</h3>
+        <h3 className="event-creat-text"><b>When?</b><b> Where?</b><b> Who?</b></h3>
         <form onSubmit={handleSubmit}>
-          <label>When? </label>
-          <input
+          <label className="event-creat-label">When? </label> <br />
+          <input className="event-input"
             type="text"
             name="when"
             value={when}
             onChange={handleWhenInput}
-          />
-          <label>Where? </label>
-          <input
+          /> <br />
+          <label className="event-creat-label">Where? </label> <br />
+          <input className="event-input"
             type="text"
             name="where"
             value={where}
             onChange={handleWhereInput}
-          />
-          <label>Who? </label>
-          <input type="text" name="who" value={who} onChange={handleWhoInput} />
+          /> <br />
+          <label className="event-creat-label">Who? </label> <br />
+          <input className="event-input event-input-who" type="text" name="who" value={who} onChange={handleWhoInput} />
 
-          <button type="submit">Confirm</button>
+          <br />
+
+          <button className="event-btn" type="submit">Confirm</button>
         </form>
       </div>
     );

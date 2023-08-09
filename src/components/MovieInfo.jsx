@@ -32,11 +32,12 @@ function MovieInfo() {
 
   return (
     <>
-      <p>Name: {randomMovie && randomMovie.name}</p>
-      <p>Rating: {randomMovie && randomMovie.aggregateRating.ratingValue}</p>
-      <p>Year: {randomMovie && randomMovie.datePublished}</p>
-      <p>Genre(s): {randomMovie && randomMovie.genre}</p>
-      <img src={randomMovie && randomMovie.image} />
+    <h4 className="event-movie-text">Your Movie:</h4>
+      <p className="event-movie-info"><b> Name:</b> {randomMovie && randomMovie.name}</p>
+      <p className="event-movie-info"><b> Rating:</b> {randomMovie && randomMovie.aggregateRating.ratingValue}</p>
+      <p className="event-movie-info"><b> Year:</b> {randomMovie && randomMovie.datePublished}</p>
+      <p className="event-movie-info"><b> Genre(s):</b> {randomMovie && randomMovie.genre}</p>
+      <img className="event-movie-info" src={randomMovie && randomMovie.image} />
     </>
   );
 }

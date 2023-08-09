@@ -44,7 +44,7 @@ const LoginPage = () => {
         <br />
 
         <Link to={"/"} className="home-btn">Home</Link>
-
+        
             <h1 className="login-title"><b>Movie</b>Night</h1>
             <form onSubmit={handleLogin} >
                 <label>

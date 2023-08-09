@@ -1,12 +1,14 @@
 import RecipeInfo from "../components/RecipeInfo";
 import EventLogistics from "../components/EventLogistics";
 import MovieInfo from "../components/MovieInfo";
+import NavBar from '../components/navbar';
 
 function EventCreationPage() {
   return (
     <>
 
-      <h1>Movie Night</h1>
+        <NavBar />
+      <h1 className="header"><b>Movie</b>Night</h1>
 
       <MovieInfo/>
 
