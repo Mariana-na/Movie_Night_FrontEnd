@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import FilmGenreDropDown from "../components/filmGenreDropDown";
 import MealPrefDropDown from "../components/mealPrefDropDown";
-import Navbar from "../components/navbar";
+import NavBar from "../components/navbar";
 import "../assets/style/home.css";
 
 function HomePage() {
@@ -15,7 +15,7 @@ function HomePage() {
 
   return (
     <>
-        <Navbar/>
+        <NavBar/>
 
         <h1 className="header"><b>Movie</b>Night</h1>
 

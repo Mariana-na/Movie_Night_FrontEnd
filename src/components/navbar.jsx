@@ -5,7 +5,8 @@ import {AuthContext} from "../context/Auth.context";
 import "../assets/style/home.css";
 
 
-function Navbar() {
+function NavBar() {
+
     const {isLoggedIn, user, logoutUser, isLoading} = useContext(AuthContext);
 
     const location = useLocation();
@@ -44,4 +45,6 @@ function Navbar() {
     )
 }
 
-export default Navbar;
+
+export default NavBar;
+

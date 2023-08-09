@@ -1,6 +1,7 @@
 //import React from 'react'
 import axios from "axios";
 import { useState, useEffect } from "react";
+import "./RecipeInfo.css";
 
 // Function to fetch the JSON object
 async function fetchRandomMeal() {
@@ -31,12 +32,11 @@ function RecipeInfo() {
 
   return (
     <>
-    
       <p>Name: {randomMeal && randomMeal.meals[0].strMeal}</p>
       <p>Area: {randomMeal && randomMeal.meals[0].strArea}</p>
       <p>Recipe: {randomMeal && randomMeal.meals[0].strSource}</p>
       <p>YouTube: {randomMeal && randomMeal.meals[0].strYouTube}</p>
-      <img src={randomMeal && randomMeal.meals[0].strMealThumb} />
+      <img src={randomMeal && randomMeal.meals[0].strMealThumb}  />
     </>
   );
 }

@@ -45,3 +45,14 @@
   color: #888;
 }
 
+/* Apply styles when the attending button is selected */
+.attending-button-selected {
+  background-color: green; /* Change to your desired color */
+  color: white;
+}
+
+/* Apply styles when the not attending button is selected */
+.not-attending-button-selected {
+  background-color: red; /* Change to your desired color */
+  color: white;
+}
