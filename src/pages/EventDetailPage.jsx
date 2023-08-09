@@ -7,6 +7,7 @@ import {API_URL} from "../config/config.index";
 import {useParams} from "react-router-dom";
 import { useState } from 'react';
 import EventEditForm from '../components/EventEditForm';
+import CommentsViewer from '../components/CommentsViewer';
 import "../App.css";
 
 
@@ -74,30 +75,29 @@ function EventDetailPage() {
 
   return (
     <>
-
-      <NavBar/>
+      <NavBar />
       {eventInfo ? (
         <div>
           {isEditing ? (
             <EventEditForm eventInfo={eventInfo} handleUpdate={handleUpdate} />
-          
-        ) : (
-          <div>
-          <h1>{eventInfo.eventName}</h1>
-          {/* <p>{eventInfo.userId.name}</p> */}
-          <p>{eventInfo.recipeId}</p>
-          <p>{eventInfo.eventDate}</p>
-          <p>{eventInfo.eventLocation}</p>
-          {/* <p>{eventInfo.attendees}</p> */}
-          <button onClick={handleEdit}>Edit Event</button>
-          </div>
-        )}
+          ) : (
+            <div>
+              <h1>{eventInfo.eventName}</h1>
+              {/* <p>{eventInfo.userId.name}</p> */}
+              <p>{eventInfo.recipeId}</p>
+              <p>{eventInfo.eventDate}</p>
+              <p>{eventInfo.eventLocation}</p>
+              {/* <p>{eventInfo.attendees}</p> */}
+              <button onClick={handleEdit}>Edit Event</button>
+            </div>
+          )}
         </div>
       ) : (
         <p>Loading event details...</p>
       )}
 
-      <Comments propEventId={propEventId}/>
+      <Comments propEventId={propEventId} />
+      <CommentsViewer />
     </>
   );
 }
