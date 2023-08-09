@@ -14,6 +14,7 @@ function EventDetailPage() {
 
   const [eventInfo, setEventInfo] = useState(null);
   const { eventId } = useParams();
+  const [propEventId, setpropEventId] = useState(eventId);
 
   const fetchEvent = async (event) => {
 
@@ -50,27 +51,26 @@ function EventDetailPage() {
 
   return (
     <>
-      <NavBar/>
+      <NavBar />
       {eventInfo ? ( // Conditional rendering
         <div>
           <h1>{eventInfo.eventName}</h1>
-          <p>{eventInfo.userId.name}</p>
+          {/* <p>{eventInfo.userId.name}</p> */}
           <p>{eventInfo.recipeId}</p>
           <p>{eventInfo.eventDate}</p>
           <p>{eventInfo.eventLocation}</p>
-          <p>{eventInfo.attendees}</p>
+          {/* <p>{eventInfo.attendees}</p> */}
         </div>
       ) : (
         <p>Loading event details...</p>
       )}
 
-        <button onClick="handleEdit">Edit Event</button>
+      {/* <button onClick="handleEdit">Edit Event</button> */}
 
-      <Comments/>
+      <Comments propEventId={propEventId}/>
       {/* <CommentAndButtonsForm/> */}
     </>
-
-  )
+  );
 }
 
 export default EventDetailPage
