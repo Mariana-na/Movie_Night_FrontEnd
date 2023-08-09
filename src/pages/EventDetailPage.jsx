@@ -14,7 +14,11 @@ function EventDetailPage() {
 
   const [eventInfo, setEventInfo] = useState(null);
   const { eventId } = useParams();
+
   const [isEditing, setIsEditing] = useState(false);
+
+  const [propEventId, setpropEventId] = useState(eventId);
+
 
   const fetchEvent = async (event) => {
 
@@ -70,6 +74,7 @@ function EventDetailPage() {
 
   return (
     <>
+
       <NavBar/>
       {eventInfo ? (
         <div>
@@ -92,12 +97,9 @@ function EventDetailPage() {
         <p>Loading event details...</p>
       )}
 
-        {/* <button onClick="handleEdit">Edit Event</button> */}
-
-      <Comments/>
+      <Comments propEventId={propEventId}/>
     </>
-
-  )
+  );
 }
 
 export default EventDetailPage
