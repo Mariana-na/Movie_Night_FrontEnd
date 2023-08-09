@@ -26,7 +26,7 @@ function EventEditForm({ eventInfo, handleUpdate }) {
           <input type="text" name="eventName" value={editedEvent.eventName} onChange={handleChange}/>
           <input type="text" name="eventDate" value={editedEvent.eventDate} onChange={handleChange}/>
           <input type="text" name="eventLocation" value={editedEvent.eventLocation} onChange={handleChange}/>
-          <button type="submit">Update Event</button>
+          <button type="submit">Update</button>
         </form>
       );
     }

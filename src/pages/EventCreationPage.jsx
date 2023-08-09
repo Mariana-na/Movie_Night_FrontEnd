@@ -77,9 +77,6 @@ function EventCreationPage() {
           <button type="submit">Confirm</button>
         </form>
       </div>
-      <p>When {when}</p>
-      <p>Where {where}</p>
-      <p>Who {who}</p>
     </>
   );
 }
