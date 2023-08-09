@@ -9,8 +9,10 @@ import Comments from '../components/Comments';
 import {API_URL} from "../config/config.index";
 import { useNavigate } from "react-router-dom";
 import EventEditForm from '../components/EventEditForm';
+import CommentsViewer from '../components/CommentsViewer';
 import { AuthContext } from "../context/Auth.context";
 import { useContext } from "react";
+
 
 
 function EventDetailPage() {
@@ -80,12 +82,12 @@ function EventDetailPage() {
 
   return (
     <>
-
-      <NavBar/>
+      <NavBar />
       {eventInfo ? (
         <div>
           {isEditing ? (
             <EventEditForm eventInfo={eventInfo} handleUpdate={handleUpdate} />
+
           
         ) : (
           <div>
@@ -103,12 +105,14 @@ function EventDetailPage() {
           )}
           </div>
         )}
+
         </div>
       ) : (
         <p>Loading event details...</p>
       )}
 
-      <Comments propEventId={propEventId}/>
+      <Comments propEventId={propEventId} />
+      <CommentsViewer />
     </>
   );
 }

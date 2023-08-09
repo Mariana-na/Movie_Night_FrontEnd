@@ -2,20 +2,26 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "./MovieInfo.css";
-import {API_URL} from "../config/config.index";
+import { API_URL } from "../config/config.index";
 
-// Function to fetch the JSON object
 async function fetchRandomMovie() {
-  try {
-    const response = await axios.get(
-      `${API_URL}/api/randomMovie`
-    );
-    const movie = response.data;
-    console.log("From fRM function", movie);
-    return movie;
-  } catch (error) {
-    console.error(error);
-  }
+  const top250films = "./data/top250.json";
+  const parsedObj = JSON.parse(top250films);
+  const numEntries = Object.keys(parsedObj).length;
+  const randomIndex = Math.floor(Math.random() * numEntries);
+  const randomEntry = parsedObj[randomIndex];
+  console.log(randomEntry);
+
+  // try {
+  //   const response = await axios.get(
+  //     `${API_URL}/event/randomMovie`
+  //   );
+  //   const movie = response.data;
+  //   console.log("From fRM function", movie);
+  //   return movie;
+  // } catch (error) {
+  //   console.error(error);
+  // }
 }
 
 function MovieInfo() {
@@ -24,7 +30,7 @@ function MovieInfo() {
   useEffect(() => {
     const getRandomMovie = async () => {
       const movie = await fetchRandomMovie();
-      setRandomMovie(movie);
+      setRandomMovie(randomEntry);
       console.log("JSON: ", JSON.stringify(randomMovie));
     };
 
@@ -36,7 +42,7 @@ function MovieInfo() {
       <p>Name: {randomMovie && randomMovie.name}</p>
       {/*<p>Rating: {randomMovie && randomMovie.aggregateRating.ratingValue}</p> */}
       <p>Year: {randomMovie && randomMovie.datePublished}</p>
-      <p>Genre(s): {randomMovie && randomMovie.genre}</p>
+      <p>Genre(s): {randomMovie && randomMovie.genre[0]}</p>
       <img src={randomMovie && randomMovie.image} />
     </>
   );
