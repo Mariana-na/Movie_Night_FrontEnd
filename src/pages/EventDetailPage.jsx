@@ -41,7 +41,7 @@ function EventDetailPage() {
     }
   }
 
-  const eventCreatorId = eventInfo ? eventInfo.userId : null; // Extract creator ID from eventInfo
+  const eventCreatorId = eventInfo ? eventInfo.userId : null;
 
   const isCurrentUserEventCreator = user && user._id === eventCreatorId;
 
