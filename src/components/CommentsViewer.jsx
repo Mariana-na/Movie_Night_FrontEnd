@@ -3,33 +3,36 @@ import axios from "axios";
 import { API_URL } from "../config/config.index";
 import { useParams } from "react-router-dom";
 
-function CommentsViewer() {
-  const [eventComments, setEventComments] = useState([]);
+function CommentsViewer(props) {
+  // const [eventComments, setEventComments] = useState([]);
   const { eventId } = useParams();
   const [userData, setUserData] = useState({});
+  const { comments, setEventComments } = props;
 
+  // useEffect(() => {
+    // const fetchComments = async () => {
+    //   try {
+    //     const response = await axios.get(`${API_URL}/feedback/${eventId}`);
+    //     const allComments = response.data;
+    //     console.log("All the comments from this event: ", allComments);
+    //     setEventComments(allComments);
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // };
 
-  useEffect(() => {
-    const fetchComments = async () => {
-      try {
-        const response = await axios.get(`${API_URL}/feedback/${eventId}`);
-        const allComments = response.data;
-        console.log("All the comments from this event: ", allComments);
-        setEventComments(allComments);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    // fetchComments();
+    
+  // }, [eventId, comments]);
 
-    fetchComments();
-  }, [eventId]);
-
-
+  // useEffect(() => {
+  //   fetchComments();
+  // }, [])
   
 
   return (
     <>
-      {eventComments.map((comment) => (
+      {comments.map((comment) => (
         <div key={comment._id}>
 
           <p>{comment.name} </p>
