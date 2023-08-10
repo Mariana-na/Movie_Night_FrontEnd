@@ -32,13 +32,17 @@ function RecipeInfo() {
 
   return (
     <>
-      <p>Name: {randomMeal && randomMeal.meals[0].strMeal}</p>
-      <p>Area: {randomMeal && randomMeal.meals[0].strArea}</p>
-      <p>Recipe: {randomMeal && randomMeal.meals[0].strSource}</p>
-      <p>YouTube: {randomMeal && randomMeal.meals[0].strYouTube}</p>
-      <img src={randomMeal && randomMeal.meals[0].strMealThumb}  />
+    <h4 className="event-meal-text">Your Meal:</h4>
+      <p className="event-meal-info"><b>Name: </b>{randomMeal && randomMeal.meals[0].strMeal}</p>
+      <p className="event-meal-info"><b>Area: </b>{randomMeal && randomMeal.meals[0].strArea}</p>
+      <p className="event-meal-info"><b>Recipe: </b>{randomMeal && randomMeal.meals[0].strSource}</p>
+      <p className="event-meal-info"><b>YouTube: </b>{randomMeal && randomMeal.meals[0].strYouTube}</p>
+      <img className="meal-img" src={randomMeal && randomMeal.meals[0].strMealThumb}  />
+      <br />
     </>
   );
 }
 
 export default RecipeInfo;
+
+

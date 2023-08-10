@@ -1,18 +1,23 @@
-body {
-  margin: 0;
-  padding: 0.5rem;
-  text-align: center;
-  background-color: crimson;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-}
+
+
+
+                      /*----------------Mobile Size---------------*/
 
 @media (max-width: 767px) {
   /*/////////////////////////// Home Page /////////////////////////*/
 
+  body {
+    margin: 0;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: crimson;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  }
+
   .header {
     color: black;
     font-size: 4rem;
-    margin-top: 50px;
+    margin: 90px;
   }
 
   .header b {
@@ -23,7 +28,6 @@ body {
     font-size: 20px;
     color: rgb(255, 255, 255);
     font-weight: 500;
-    /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
   }
 
   .home-text:last-child {
@@ -34,7 +38,7 @@ body {
     background-color: #ffffff;
     color: black;
     align-items: center;
-    margin: 0 10px;
+    margin: 40px 10px;
     padding: 25px 70px;
     border-radius: 100px;
     font-size: 30px;
@@ -101,6 +105,10 @@ body {
     justify-content: space-between;
   }
 
+  .logout {
+    margin-top: 35px;
+  }
+
   /*/////////////////////////// Login Page /////////////////////////*/
 
   .login-title {
@@ -124,6 +132,7 @@ body {
     text-transform: uppercase;
     font-weight: bolder;
     border: none;
+    cursor: pointer;
   }
 
   .login-text {
@@ -154,6 +163,10 @@ body {
     text-decoration: none;
     border: none;
     cursor: pointer;
+  }
+
+  .login-signup-text {
+    margin: 25px;
   }
 
   /*/////////////////////////// Sign Page /////////////////////////*/
@@ -282,19 +295,36 @@ body {
     color: #ffffff;
   }
 
+  .event-meal-text {
+    display: flex;
+    margin-left: 23%;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 19px;
+  }
+
+  .event-meal-info {
+    text-align: left;
+    margin-left: 30%;
+    color: #ffffff;
+  }
+
   /*/////////////////////////// EventDetail Page /////////////////////////*/
 
   /*/////////////////////////// FilmGenre Page /////////////////////////*/
-
+/* 
   .film-genre {
-    /* width: 200px; 
-      height: 40px; */
+    width: 200px; 
+      height: 40px;
     padding: 10px;
     font-size: 16px;
-  }
+  } */
 
   /*/////////////////////////// FilmInfo Page /////////////////////////*/
 }
+
+
+                    /*----------------WEB Size---------------*/
 
 @media (min-width: 768px) {
   /*/////////////////////////// Home Page /////////////////////////*/
@@ -308,7 +338,8 @@ body {
 
   .header {
     color: black;
-    font-size: 4rem;
+    font-size: 6rem;
+    margin: 122px;
   }
 
   .header b {
@@ -316,63 +347,104 @@ body {
   }
 
   .home-text {
-    font-size: 20px;
-    color: rgba(255, 255, 255, 0.807);
-    font-weight: 500;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
   }
 
   .home-text:last-child {
-    font-size: xx-large;
+    font-size: 42px;
   }
 
-  .home-btn {
+  .homePage-mk-btn {
     background-color: #ffffff;
     color: black;
     align-items: center;
-    margin: 0 10px;
-    padding: 30px 70px;
-    border-radius: 75px;
-    font-size: 40px;
+    margin: 70px 10px;
+    padding: 30px 90px;
+    border-radius: 100px;
+    font-size: 45px;
     text-transform: uppercase;
-    font-weight: bolder;
+    font-family: fantasy;
+    border: none;
+    text-decoration: none;
   }
 
   .nav-btn {
-    display: block;
-    justify-content: space-between;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+    cursor: pointer;
   }
 
   .nav-btn-login {
     background-color: #ffffff;
     color: crimson;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 10px 35px;
     border-radius: 25px;
     align-items: center;
-    margin: 0 10px;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
   }
 
   .nav-btn-sign {
     background-color: crimson;
     color: #ffffff;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 10px 35px;
     border-radius: 25px;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
   }
 
-  nav-btn:hover {
+  .home-btn {
+    background-color: #ffffff;
     color: crimson;
+    align-items: center;
+    padding: 10px 30px;
+    border-radius: 75px;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btns {
+    background-color: crimson;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    justify-content: space-between;
+  }
+
+  .logout {
+    margin-top: 55px;
+    font-size: 20px;
+    background-color: #ffffff;
+    color: crimson;
+    border-radius: 50px;
   }
 
   /*/////////////////////////// Login Page /////////////////////////*/
 
-  .title {
+  .login-title {
     color: black;
-    font-size: 4rem;
+    font-size: 6rem;
+    margin: 120px;
   }
 
-  .title b {
+  .login-title b {
     color: #ffffff;
   }
 
@@ -380,19 +452,202 @@ body {
     background-color: #ffffff;
     color: crimson;
     align-items: center;
+    margin: 35px 10px;
+    padding: 10px 40px;
+    border-radius: 75px;
+    font-size: 23px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: none;  
+    cursor: pointer;
+  }
+
+  .login-text {
+    color: #ffffff;
+    text-align: left;
+    margin-left: 34%;
+    padding-left: 25px;
+    font-size: 1.3rem;
+    font-weight: 800;
+  }
+
+  .login-input {
+    text-align: left;
+    padding: 13px 120px;
+    border-radius: 25px;
+    border-style: none;
+  }
+
+  .login-signup {
+    color: rgb(255, 255, 255);
+    align-items: center;
     margin: 0 10px;
+    padding: 10px 40px;
+    border-radius: 75px;
+    font-size: 27px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .login-signup-text {
+    margin: 45px;
+  }
+
+  /*/////////////////////////// Sign Page /////////////////////////*/
+
+  .signup-title {
+    color: black;
+    font-size: 6rem;
+    margin: 120px;
+  }
+
+  .signup-title b {
+    color: #ffffff;
+  }
+
+  .signup-text {
+    color: #ffffff;
+    text-align: left;
+    margin-left: 33%;
+    padding-left: 25px;
+    font-size: 1.3rem;
+    font-weight: 800;
+  }
+
+  .signup-input {
+    text-align: left;
+    padding: 15px 130px;
+    border-radius: 25px;
+    border-style: none;
+  }
+
+  .signup-btn {
+    background-color: #ffffff;
+    color: crimson;
+    align-items: center;
+    margin: 40px 10px;
+    padding: 10px 40px;
+    border-radius: 75px;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+  }
+
+  .signup-login {
+    color: rgb(255, 255, 255);
+    align-items: center;
+    margin: 0 10px;
+    padding: 10px 40px;
+    border-radius: 75px;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  } 
+
+  /*/////////////////////////// Profile Page /////////////////////////*/
+
+  .prof-title {
+    color: black;
+    font-size: 6rem;
+    margin: 180px;
+  }
+
+  .prof-gr {
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 90px;
+  }
+
+
+  /*/////////////////////////// EventCreation Page /////////////////////////*/
+
+  .event-movie-text {
+    display: flex;
+    margin-left: 23%;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 19px;
+  }
+
+  .event-movie-info {
+    text-align: left;
+    margin-left: 30%;
+    color: #ffffff;
+  }
+
+  .event-meal-text {
+    display: flex;
+    margin-left: 23%;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 19px;
+  }
+
+  .event-meal-info {
+    text-align: left;
+    margin-left: 30%;
+    color: #ffffff;
+  }
+
+  .meal-img {
+    margin: 30px 0 60px 0;
+    width: 30rem;
+  }
+  
+  .event-creat-text b {
+    color: #ffffff;
+    padding: 30px;
+    font-size: 30px;
+    margin: 30px;
+  }
+
+  .event-creat-label {
+    color: #ffffff;
+    display: flex;
+    margin-left: 35%;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .event-creat-label:first-child {
+    margin-top: 75px;
+  }
+
+  .event-input {
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 15px 120px;
+    border-radius: 25px;
+    border-style: none;
+  }
+
+  .event-input-who {
+    height: 150px;
+  }
+
+  .event-btn {
+    background-color: #ffffff;
+    color: crimson;
+    align-items: center;
+    margin-top: 50px;
     padding: 10px 40px;
     border-radius: 75px;
     font-size: 15px;
     text-transform: uppercase;
     font-weight: bolder;
+    border: none;
   }
-
-  /*/////////////////////////// Sign Page /////////////////////////*/
-
-  /*/////////////////////////// Profile Page /////////////////////////*/
-
-  /*/////////////////////////// EventCreation Page /////////////////////////*/
 
   /*/////////////////////////// EventDetail Page /////////////////////////*/
 

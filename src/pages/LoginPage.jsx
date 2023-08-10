@@ -62,7 +62,7 @@ const LoginPage = () => {
 
             { errorMessage && <p>{errorMessage}</p> }
 
-            <p>Don't have an account yet?</p>
+            <p className="login-signup-text">Don't have an account yet?</p>
             <Link to={"/signup"} className="login-signup"> Sign Up</Link>
 
 

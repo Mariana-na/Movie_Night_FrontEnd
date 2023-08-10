@@ -1,5 +1,5 @@
 
-import LogOut from '../components/LogOut';
+// import LogOut from '../components/LogOut';
 import {Link} from "react-router-dom";
 import NavBar from '../components/navbar';
 import { AuthContext } from '../context/Auth.context';
@@ -26,15 +26,16 @@ function ProfilePage() {
         </p>
       </div>
 
-      {/* <div>
-        <h3>My Events</h3>
+      <div>
+        {/* <h3>My Events</h3> */}
         <ul>
         </ul>
       </div>
 
-      <Link to="../pages/eventCreationPage">Create Event</Link> */}
+      <Link to="../eventCreation" className='home-btn'>Create Event</Link>
+      <br />
       
-      <LogOut />
+      {/* <LogOut /> */}
       
     </>
   );

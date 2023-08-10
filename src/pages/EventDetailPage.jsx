@@ -2,12 +2,14 @@
 import React from 'react'
 import CommentAndButtonsForm from '../components/CommentAndButtonsForm'
 import "../App.css";
+import NavBar from "../components/navbar"
 
 
 function EventDetailPage() {
   return (
     <>
-      <h1>Movie Night</h1>
+    <NavBar />
+      <h1 className='header'><b>Movie</b>Night</h1>
       <CommentAndButtonsForm/>
     </>
 
