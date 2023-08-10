@@ -4,7 +4,6 @@ import { AuthContext } from "../context/Auth.context";
 import { useLocation } from "react-router-dom";
 import "./style/NavBar.css";
 import "/public/MovieNight.png";
-// import { useState } from "react";
 
 function NavBar() {
   const { isLoggedIn, user, logoutUser, isLoading } = useContext(AuthContext);
