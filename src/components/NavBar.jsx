@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { AuthContext } from "../context/Auth.context";
 import { useLocation } from "react-router-dom";
 import "/style/NavBar.css";
-//import "../img/MovieNight.png";
 import "/style/global.css";
 
 function NavBar() {

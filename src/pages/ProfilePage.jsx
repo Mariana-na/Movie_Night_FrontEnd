@@ -15,7 +15,7 @@ function ProfilePage() {
       <NavBar/>
       <div>
         {/* <h2 className="prof-title" >Profile Page</h2> */}
-        <img className="prof-pic" src="../public/img/aaa.jpg" alt="profile picture" />
+        <img className="prof-pic" src="../img/aaa.jpg" alt="profile picture" />
         
         <p className="prof-gr" >
           {user.name}
