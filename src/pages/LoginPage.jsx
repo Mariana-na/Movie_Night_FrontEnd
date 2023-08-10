@@ -3,8 +3,8 @@ import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
 import {AuthContext} from "../context/Auth.context";
 import {API_URL} from "../config/config.index";
-import "../BodyM.css";
-import "./style/LoginPage.css";
+import "/style/global.css";
+import "/style/LoginPage.css";
 
 const LoginPage = () => {
 
@@ -43,7 +43,7 @@ const LoginPage = () => {
     return (
         <div className="login-overall-container">
             <h1 className="login-title" >Movie Night</h1>
-            <form class="login-form-container" onSubmit={handleLogin} >
+            <form className="login-form-container" onSubmit={handleLogin} >
                 <label className="login-text" >
                     Email:
                     <input className="login-input" type="email" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>

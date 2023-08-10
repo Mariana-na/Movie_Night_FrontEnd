@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import "../global.css";
-import "./style/MovieInfo.css";
+import "/style/global.css";
+import "/style/MovieInfo.css";
 
 import top250films from "../data/top250.json";
 
