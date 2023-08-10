@@ -25,7 +25,8 @@ function CommentsViewer() {
   return (
     <>
       {eventComments.map((comment) => (
-        <div key={comment.id}>
+        <div key={comment._id}>
+          <p>{comment.userId}</p>
           <p>{comment.comment}</p>
         </div>
       ))}
