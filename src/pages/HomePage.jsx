@@ -2,13 +2,13 @@ import {Link} from "react-router-dom";
 import NavBar from "../components/NavBar";
 
 function HomePage() {
-  const handleSomeFunction = () => {
+/*   const handleSomeFunction = () => {
     console.log("You clicked the button!");
   };
 
   const handleMakeMyNight = () => {
     console.log("Make My Night clicked");
-  };
+  }; */
 
   return (
     <>
