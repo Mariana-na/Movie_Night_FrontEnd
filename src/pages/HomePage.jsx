@@ -1,6 +1,4 @@
 import {Link} from "react-router-dom";
-import FilmGenreDropDown from "../components/filmGenreDropDown";
-import MealPrefDropDown from "../components/mealPrefDropDown";
 import NavBar from "../components/NavBar";
 
 function HomePage() {
