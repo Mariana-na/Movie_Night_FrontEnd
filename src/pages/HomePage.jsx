@@ -1,6 +1,4 @@
 import {Link} from "react-router-dom";
-import FilmGenreDropDown from "../components/filmGenreDropDown";
-import MealPrefDropDown from "../components/mealPrefDropDown";
 import NavBar from "../components/NavBar";
 
 function HomePage() {
@@ -17,11 +15,6 @@ function HomePage() {
         <NavBar/>
 
         <h1>Movie Night</h1>
-
-        <FilmGenreDropDown />
-        <br />
-        <MealPrefDropDown/>
-        <br />
 
 
         <button type="button" ><Link to="/eventCreation" >Make My Night!</Link></button>
