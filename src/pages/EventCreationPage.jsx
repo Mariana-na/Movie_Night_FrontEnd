@@ -26,7 +26,7 @@ function EventCreationPage() {
   const navigate = useNavigate();
 
   const { user } = useContext(AuthContext);
-  const userId = user._id;
+  const userId = user ? user._id : null;
 
   
   const handleEventCreation = async (event) => {
