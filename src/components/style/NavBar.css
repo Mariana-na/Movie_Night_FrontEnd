@@ -1,0 +1,43 @@
+nav {
+    margin: 0 0 2rem 0;
+    /* background-color: aqua; */
+    padding: 1rem;
+    display:flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 0.5px solid white;
+   
+}
+
+.leftSection > img {
+    margin: 0;
+}
+
+.leftSection {
+    display: flex;
+     gap: 1rem;
+    align-items: center;
+
+}
+
+.logOutButton {
+  background-color: crimson;
+  border: 0.5px solid white;
+  border-radius: 2rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.buttons {
+  background-color: white;
+  border: none;
+  border-radius: 2rem;
+  color: crimson;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+}
