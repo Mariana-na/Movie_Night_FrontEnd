@@ -18,11 +18,6 @@ function HomePage() {
 
         <h1>Movie Night</h1>
 
-        <FilmGenreDropDown />
-        <br />
-        <MealPrefDropDown/>
-        <br />
-
 
         <button type="button" ><Link to="/eventCreation" >Make My Night!</Link></button>
         

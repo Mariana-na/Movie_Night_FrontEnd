@@ -2,22 +2,16 @@
 
 function EventLogistics(props) {
 
-    // eslint-disable-next-line react/prop-types
+
     const {eventName, setEventName,when, setWhen, where, setWhere, who, setWho} = props;
 
-   // const [when, setWhen] = useState("");
-    //const [where, setWhere] = useState("");
-    //const [who, setWho] = useState("");
+
 
   const handleEventNameInput = (e) => setEventName(e.target.value);  
   const handleWhenInput = e => setWhen(e.target.value);
     const handleWhereInput = e => setWhere(e.target.value);
     const handleWhoInput = e => setWho(e.target.value);
-//     const handleSubmit = e => {
-//         e.preventDefault();
-//         const newLogistics = { when, where, who }
-//         console.log(newLogistics);
-// }
+
 
 
   return (
