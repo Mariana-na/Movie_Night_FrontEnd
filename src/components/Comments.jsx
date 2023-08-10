@@ -10,16 +10,15 @@ function Comments(props) { // this is us passing the eventId from the EDP
     const [newComment, setNewComment] = useState(""); //allows us to update the comment info and send it to the DB
     const { user } = useContext(AuthContext);
     const userId = user._id;
-    const { propEventId } = props;
-    //console.log("fehjpiehgeiogheowi", {propEventId})
-
+    const { propEventId, comments, setComments } = props;
+ 
     const handlePostComment = async (event) => {
         event.preventDefault();
         try {
             const userComment = await axios.post(`${API_URL}/feedback/${propEventId}`, { comment: newComment, userId});
             console.log("gihfeoihewgoiewghiowehg",userComment);
             setNewComment("");
-
+       setComments([userComment.data,...comments])
         } catch (error) {
             console.error('Error posting comment:', error);
         }
@@ -38,5 +37,4 @@ function Comments(props) { // this is us passing the eventId from the EDP
         </>
   )
 }
-
 export default Comments;

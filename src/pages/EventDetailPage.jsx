@@ -18,7 +18,9 @@ function EventDetailPage() {
   const [randomMeal, setRandomMeal] = useState(null);
   const [randomMovie, setRandomMovie] = useState(null);
   const [eventCreatorId, setEventCreatorId] = useState(null);
-
+  const [commentCreated, setCommentCreated] = useState(null);
+  const [eventComments, setEventComments] = useState([]);
+ 
   const fetchEvent = async () => {
     try {
       const response = await axios.get(`${API_URL}/event/${eventId}`);
@@ -36,9 +38,20 @@ function EventDetailPage() {
 
   useEffect(() => {
     fetchEvent();
+      const fetchComments = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/feedback/${eventId}`);
+        const allComments = response.data;
+        console.log("All the comments from this event: ", allComments);
+        setEventComments(allComments);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchComments();
   }, [eventId]);
 
-  const eventCreatorId = eventInfo ? eventInfo.userId : null;
+  // const eventCreatorId = eventInfo ? eventInfo.userId : null;
 
 
   const isCurrentUserEventCreator = user && user._id === eventCreatorId;
@@ -97,8 +110,15 @@ function EventDetailPage() {
         <p>Loading event details...</p>
       )}
 
-      <Comments propEventId={propEventId} />
-      <CommentsViewer />
+      <Comments
+        propEventId={propEventId}
+        comments={eventComments}
+        setComments={setEventComments}
+      />
+      <CommentsViewer
+         comments={eventComments}
+        setComments={setEventComments}
+      />
     </>
   );
 }
