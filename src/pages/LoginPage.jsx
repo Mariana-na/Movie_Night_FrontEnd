@@ -2,7 +2,7 @@ import {useContext, useState} from "react";
 import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
 import {AuthContext} from "../context/Auth.context";
-import "../assets/style/home.css";
+import "../assets/style/LoginPage.css";
 
 import {API_URL} from "../config/config.index";
 
@@ -51,7 +51,7 @@ const LoginPage = () => {
                 <label>
                     
             <p className="login-text">Email:</p> 
-                    <input type="email" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
+                    <input className="login-input" type="email" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
                 </label>
                 <br />
                 <label>
