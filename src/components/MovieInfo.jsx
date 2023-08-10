@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import "./MovieInfo.css";
+import "../global.css";
+import "./style/MovieInfo.css";
+
 import top250films from "../data/top250.json";
 
 // Function to fetch the film info from the local JSON
@@ -16,9 +18,9 @@ function fetchRandomMovie() {
 function MovieInfo(props) {
   const { randomMovie, setRandomMovie } = props;
   const [buttonPressed, setButtonPressed] = useState(false);
-   const handleButtonClick = () => {
-     setButtonPressed(true);
-   };
+  const handleButtonClick = () => {
+    setButtonPressed(true);
+  };
 
   useEffect(() => {
     const randomMovie = fetchRandomMovie();
@@ -37,16 +39,23 @@ function MovieInfo(props) {
 
   return (
     <>
-      <p>Name: {randomMovie && randomMovie.name}</p>
-      {/*<p>Rating: {randomMovie && randomMovie.aggregateRating.ratingValue}</p> */}
-      <p>Year: {randomMovie && randomMovie.datePublished}</p>
-      <p>Genre(s): {randomMovie && randomMovie.genre[0]}</p>
-      <img
-        src={randomMovie && randomMovie.image}
-        alt={randomMovie && randomMovie.name}
-      />
-      <p>Name: {randomMovie && randomMovie.description}</p>
-      <button onClick={handleButtonClick}>Update Movie</button>
+      <div className="mInfo">
+        <div className="mInfo-left">
+          <h2>{randomMovie && randomMovie.name}</h2>
+          {/*<p>Rating: {randomMovie && randomMovie.aggregateRating.ratingValue}</p> */}
+          <span id="genre-release">
+            <p> Released: {randomMovie && randomMovie.datePublished}</p>
+
+            <p>Genre: {randomMovie && randomMovie.genre[0]}</p>  </span>
+            <p>{randomMovie && randomMovie.description}</p>
+        
+          <button className="update" onClick={handleButtonClick}>Update Movie</button>
+        </div>
+        <img
+          src={randomMovie && randomMovie.image}
+          alt={randomMovie && randomMovie.name}
+        />
+      </div>
     </>
   );
 }
