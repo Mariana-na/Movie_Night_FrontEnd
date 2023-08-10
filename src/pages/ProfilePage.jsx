@@ -2,8 +2,8 @@ import {Link} from "react-router-dom";
 import NavBar from '../components/NavBar';
 import { AuthContext } from '../context/Auth.context';
 import { useContext } from 'react';
-import "../BodyM.css";
-import "./style/ProfilePage.css";
+import "/style/global.css";
+import "/style/ProfilePage.css";
 
 
 function ProfilePage() {
@@ -24,7 +24,7 @@ function ProfilePage() {
           {user.email}
         </p>
       </div>
-      <Link to="/eventCreation"><button class="create-event-btn" >Create an Event</button></Link>
+      <Link to="/eventCreation"><button className="create-event-btn" >Create an Event</button></Link>
     </>
   );
 }

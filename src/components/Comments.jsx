@@ -4,6 +4,7 @@ import axios from "axios";
 import { API_URL } from "../config/config.index";
 import { AuthContext } from "../context/Auth.context";
 import { useContext } from "react";
+import "/style/global.css";
 
 function Comments(props) { // this is us passing the eventId from the EDP
     

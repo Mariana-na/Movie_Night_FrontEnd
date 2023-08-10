@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState} from "react";
+import "/style/global.css";
 
 function EventEditForm({ eventInfo, handleUpdate }) {
     const [editedEvent, setEditedEvent] = useState({

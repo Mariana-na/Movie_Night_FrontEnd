@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import "./style/RecipeInfo.css";
-import "../global.css";
+import "/style/global.css";
+import "/style/RecipeInfo.css";
 import { Link } from "react-router-dom";
 
 // Function to fetch the JSON object from the api

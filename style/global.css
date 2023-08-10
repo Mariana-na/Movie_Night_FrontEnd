@@ -1,10 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400');
 
+/*----------------------------MOBILE----------------------------*/
+
+@media (max-width: 767px) {
+
+
+    body {
+        margin: 0;
+        padding: 0.5rem;
+        text-align: center;
+        background-color: #CC1838;
+        font-family: "Roboto", sans-serif;
+      }
+
+
+}
+
+
+/*----------------------------WEB----------------------------*/
+
 html {font-size: 100%;} /*16px*/
 
 body {
   margin: 0 auto;
-    background-color: crimson;
+    background-color: #CC1838;
     color: white;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;

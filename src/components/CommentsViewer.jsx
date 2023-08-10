@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { API_URL } from "../config/config.index";
+//import axios from "axios";
+//import { API_URL } from "../config/config.index";
 import { useParams } from "react-router-dom";
+import "/style/global.css";
 
 function CommentsViewer(props) {
   // const [eventComments, setEventComments] = useState([]);

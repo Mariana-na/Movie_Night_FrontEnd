@@ -2,8 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import {API_URL} from "../config/config.index";
-import "../BodyM.css";
-import "./style/SignUpPage.css";
+import "/style/global.css";
+import "/style/SignupPage.css";
 
 function SignupPage() {
 

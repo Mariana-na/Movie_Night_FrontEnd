@@ -11,7 +11,7 @@
 
   .home-text {
     font-size: 20px;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     font-weight: 500;
   }
 
@@ -41,33 +41,33 @@
 
 
     .header {
-        color: black;
-        font-size: 6rem;
-        margin: 122px;
+    color: black;
+    font-size: 6rem;
+    margin: 122px;
     }
     
 
     .home-text {
-        font-size: 25px;
-        color: rgb(255, 255, 255);
-        font-weight: 600;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
     }
     
     .home-text:last-child {
-        font-size: 42px;
+    font-size: 42px;
     }
     
     .homePage-mk-btn {
-        background-color: #ffffff;
-        color: #400A0A;
-        align-items: center;
-        margin: 70px 10px;
-        padding: 30px 60px;
-        border-radius: 100px;
-        font-size: 45px;
-        font-family:"Roboto", sans-serif;
-        font-weight: 800;
-        border: none;
+    background-color: #ffffff;
+    color: #400A0A;
+    align-items: center;
+    margin: 70px 10px;
+    padding: 30px 60px;
+    border-radius: 100px;
+    font-size: 45px;
+    font-family:"Roboto", sans-serif;
+    font-weight: 800;
+    border: none;
     }
 
 }

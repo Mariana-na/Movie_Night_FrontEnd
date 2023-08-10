@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/Auth.context";
 import { useLocation } from "react-router-dom";
-import "./style/NavBar.css";
-import "/public/MovieNight.png";
+import "/style/NavBar.css";
+//import "../img/MovieNight.png";
+import "/style/global.css";
 
 function NavBar() {
   const { isLoggedIn, user, logoutUser, isLoading } = useContext(AuthContext);
@@ -16,7 +17,7 @@ function NavBar() {
     <>
       <nav>
         <div className="leftSection">
-          <img src="/public/MovieNight.png" alt="logo"/>
+          <img src="../img/MovieNight.png" alt="logo"/>
           {!isHomePage && (
             <Link to="/">
               <button className="buttons">Home</button>
