@@ -38,7 +38,7 @@ function EventDetailPage() {
     fetchEvent();
   }, [eventId]);
 
-  const eventCreatorId = eventInfo ? eventInfo.userId : null;
+  //const eventCreatorId = eventInfo ? eventInfo.userId : null; //delete if we graduate safely!
 
 
   const isCurrentUserEventCreator = user && user._id === eventCreatorId;
