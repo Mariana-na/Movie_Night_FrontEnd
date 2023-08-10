@@ -33,9 +33,13 @@ function EventDetailPage() {
     }
   };
 
+
   useEffect(() => {
     fetchEvent();
   }, [eventId]);
+
+  const eventCreatorId = eventInfo ? eventInfo.userId : null;
+
 
   const isCurrentUserEventCreator = user && user._id === eventCreatorId;
 

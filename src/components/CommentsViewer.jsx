@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 function CommentsViewer() {
   const [eventComments, setEventComments] = useState([]);
   const { eventId } = useParams();
+  const [userData, setUserData] = useState({});
+
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -22,11 +24,16 @@ function CommentsViewer() {
     fetchComments();
   }, [eventId]);
 
+
+  
+
   return (
     <>
       {eventComments.map((comment) => (
         <div key={comment._id}>
-          <p>{comment.userId}</p>
+
+          <p>{comment.name} </p>
+
           <p>{comment.comment}</p>
         </div>
       ))}
