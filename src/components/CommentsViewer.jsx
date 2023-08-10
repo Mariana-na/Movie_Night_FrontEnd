@@ -25,7 +25,7 @@ function CommentsViewer() {
   }, [eventId]);
 
 
-  useEffect(() => {
+/*   useEffect(() => {
     const fetchUserNames = async () => {
       try {
         const userNamesPromises = eventComments.map(async (comment) => {
@@ -48,15 +48,15 @@ function CommentsViewer() {
     };
   
     fetchUserNames();
-  }, [eventComments]);
+  }, [eventComments]); */
   
 
   return (
     <>
       {eventComments.map((comment) => (
-        <div key={comment.id}>
-          <p>{comment.comment}</p>
+        <div key={comment._id}>
           <p>{comment.name} </p>
+          <p>{comment.comment}</p>
         </div>
       ))}
     </>
