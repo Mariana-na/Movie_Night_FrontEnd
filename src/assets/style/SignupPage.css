@@ -1,0 +1,120 @@
+/*----------------Mobile Size---------------*/
+
+@media (max-width: 767px) {
+
+.signup-title {
+  color: black;
+  font-size: 4rem;
+  margin-top: 180px;
+}
+
+.signup-title b {
+  color: #ffffff;
+}
+
+.signup-text {
+  color: #ffffff;
+  text-align: left;
+  margin-left: 27%;
+  padding-left: 25px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.signup-input {
+  text-align: left;
+  padding: 8px 70px;
+  border-radius: 25px;
+  border-style: none;
+}
+
+.signup-btn {
+  background-color: #ffffff;
+  color: crimson;
+  align-items: center;
+  margin: 0 10px;
+  padding: 10px 40px;
+  border-radius: 75px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+}
+
+.signup-login {
+  color: rgb(255, 255, 255);
+  align-items: center;
+  margin: 0 10px;
+  padding: 10px 40px;
+  border-radius: 75px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+}
+
+/*----------------WEB Size---------------*/
+
+@media (min-width: 768px) {
+
+.signup-title {
+  color: black;
+  font-size: 6rem;
+  margin: 120px;
+}
+
+.signup-title b {
+  color: #ffffff;
+}
+
+.signup-text {
+  color: #ffffff;
+  text-align: left;
+  margin-left: 33%;
+  padding-left: 25px;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.signup-input {
+  text-align: left;
+  padding: 15px 130px;
+  border-radius: 25px;
+  border-style: none;
+}
+
+.signup-btn {
+  background-color: #ffffff;
+  color: crimson;
+  align-items: center;
+  margin: 40px 10px;
+  padding: 10px 40px;
+  border-radius: 75px;
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+}
+
+.signup-login {
+  color: rgb(255, 255, 255);
+  align-items: center;
+  margin: 0 10px;
+  padding: 10px 40px;
+  border-radius: 75px;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+}
