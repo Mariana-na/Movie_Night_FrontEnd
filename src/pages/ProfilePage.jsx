@@ -1,42 +1,32 @@
-
-// import LogOut from '../components/LogOut';
 import {Link} from "react-router-dom";
-import NavBar from '../components/navbar';
+import NavBar from '../components/NavBar';
 import { AuthContext } from '../context/Auth.context';
 import { useContext } from 'react';
+import EventCreationPage from './EventCreationPage';
 import "../assets/style/home.css";
 
 
 function ProfilePage() {
   const { user } = useContext(AuthContext);
 
+
   return (
     <>
-      <NavBar />
+      <NavBar/>
       <div>
         <h2 className='prof-title'>Profile Page</h2>
 
         //////////////// Picture //////////////
         
-        {/* <p>
-          Username: {user.name}
-        </p> */}
+        <p className='prof-gr'>
+          Name: {user.name}
+        </p>
          <p className='prof-gr'>
-          Welcom: {user.email}
+          Email: {user.email}
         </p>
       </div>
 
-      <div>
-        {/* <h3>My Events</h3> */}
-        <ul>
-        </ul>
-      </div>
-
-      <Link to="../eventCreation" className='home-btn'>Create Event</Link>
-      <br />
-      
-      {/* <LogOut /> */}
-      
+      <button className='home-btn' type="button" ><Link to="/eventCreation" >Create an Event</Link></button>
     </>
   );
 }

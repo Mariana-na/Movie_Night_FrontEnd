@@ -1,15 +1,12 @@
-import {Link, useLocation } from "react-router-dom";
+import {Link} from "react-router-dom";
 import {useContext} from "react";
 import {AuthContext} from "../context/Auth.context";
-// import { useState } from "react";
-import "../assets/style/home.css";
-
-
+import { useLocation } from "react-router-dom";
 function NavBar() {
-
     const {isLoggedIn, user, logoutUser, isLoading} = useContext(AuthContext);
-
     const location = useLocation();
+    const isHomePage = location.pathname === "/";
+    const isProfilePage = location.pathname === "/profile";
 
     return (
         <nav className="pages-nav-btn">

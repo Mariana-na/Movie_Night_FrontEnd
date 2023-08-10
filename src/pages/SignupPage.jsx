@@ -1,12 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import "../assets/style/home.css";
 
 function SignupPage() {
 
-    const [firstname, setFirstname] = useState("");
-    const [lastname, setLastname] = useState("");
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     // eslint-disable-next-line no-unused-vars
@@ -18,7 +16,7 @@ function SignupPage() {
         event.preventDefault()
 
         try {
-            const response = await axios.post("http://localhost:5005/auth/signup", {firstname, email, password})
+            const response = await axios.post(`${API_URL}/auth/signup`, {name, email, password})
 
             console.log("signup response", response)
 
@@ -39,18 +37,18 @@ function SignupPage() {
             <h1 className="signup-title"><b>Movie</b>Night</h1>
             <form onSubmit={handleSignup} className="signup-form" >
                 <label>
-                   <p className="signup-text"> First Name:</p>
-                    <input className="signup-input" placeholder="Your real name. Or a nickname" type="text" required value={firstname} onChange={(event) => {setFirstname(event.target.value); }}/>
+                    First Name:
+                    <input placeholder="Your real name. Or a nickname" type="text" required value={firstname} onChange={(event) => {setFirstname(event.target.value); }}/>
                 </label>
                 <br />
                 <label>
-                    <p className="signup-text">Last Name:</p>
-                    <input className="signup-input" placeholder="Makes it easier for your friends to recognise you" type="text" value={lastname} onChange={(event) => {setLastname(event.target.value); }}/>
+                    Last Name:
+                    <input placeholder="Makes it easier for your friends to recognise you" type="text" value={lastname} onChange={(event) => {setLastname(event.target.value); }}/>
                 </label>
                 <br />
                 <label>
-                    <p className="signup-text">Email:</p>
-                    <input className="signup-input" type="text" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
+                    Email:
+                    <input type="text" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
                 </label>
                 <br />
                 <label>

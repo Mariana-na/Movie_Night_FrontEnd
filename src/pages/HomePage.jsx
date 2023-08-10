@@ -1,28 +1,21 @@
 import {Link} from "react-router-dom";
-import FilmGenreDropDown from "../components/filmGenreDropDown";
-import MealPrefDropDown from "../components/mealPrefDropDown";
-import NavBar from "../components/navbar";
+import NavBar from "../components/NavBar";
 import "../assets/style/home.css";
 
 function HomePage() {
-  const handleSomeFunction = () => {
+/*   const handleSomeFunction = () => {
     console.log("You clicked the button!");
   };
 
   const handleMakeMyNight = () => {
     console.log("Make My Night clicked");
-  };
+  }; */
 
   return (
     <>
         <NavBar/>
 
         <h1 className="header"><b>Movie</b>Night</h1>
-
-       <div className="home-div"><FilmGenreDropDown /></div>
-       <div className="home-div"><MealPrefDropDown/></div>
-        
-        <br />
 
 
         <button className="homePage-mk-btn" type="button" ><Link to="/eventCreation" >Make My Night!</Link></button>

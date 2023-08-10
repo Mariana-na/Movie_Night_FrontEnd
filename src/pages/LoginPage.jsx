@@ -4,6 +4,7 @@ import {Link, useNavigate} from "react-router-dom";
 import {AuthContext} from "../context/Auth.context";
 import "../assets/style/home.css";
 
+import {API_URL} from "../config/config.index";
 
 const LoginPage = () => {
 
@@ -19,7 +20,7 @@ const LoginPage = () => {
         event.preventDefault()
 
         try {
-            const response = await axios.post("http://localhost:5005/auth/login", {email, password})
+            const response = await axios.post(`${API_URL}/auth/login`, {email, password})
 
             if(response.status === 202) {
             console.log("Login response", response.data)
@@ -48,8 +49,9 @@ const LoginPage = () => {
             <h1 className="login-title"><b>Movie</b>Night</h1>
             <form onSubmit={handleLogin} >
                 <label>
-                   <p className="login-text">Email:</p> 
-                    <input className="login-input" type="text" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
+                    
+            <p className="login-text">Email:</p> 
+                    <input type="email" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
                 </label>
                 <br />
                 <label>
