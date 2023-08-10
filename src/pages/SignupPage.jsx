@@ -40,7 +40,7 @@ function SignupPage() {
                 <br />
                 <label>
                     Email:
-                    <input type="text" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
+                    <input type="email" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
                 </label>
                 <br />
                 <label>
