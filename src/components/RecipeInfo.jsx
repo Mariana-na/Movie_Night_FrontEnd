@@ -21,7 +21,7 @@ try {
 
 function RecipeInfo(props) {
   const { randomMeal, setRandomMeal } = props;
-  //const [buttonPressed, setButtonPressed] = useState(false);
+
 
   useEffect(() => {
     const getRandomMeal = async () => {
