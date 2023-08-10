@@ -1,41 +1,39 @@
-//import React from 'react'
-import axios from "axios";
 import { useState, useEffect } from "react";
 import "./MovieInfo.css";
-import { API_URL } from "../config/config.index";
+import top250films from "../data/top250.json";
 
-async function fetchRandomMovie() {
-  const top250films = "./data/top250.json";
-  const parsedObj = JSON.parse(top250films);
-  const numEntries = Object.keys(parsedObj).length;
-  const randomIndex = Math.floor(Math.random() * numEntries);
-  const randomEntry = parsedObj[randomIndex];
+// Function to fetch the film info from the local JSON
+
+function fetchRandomMovie() {
+  const randomIndex = Math.floor(
+    Math.random() * Object.keys(top250films).length
+  );
+  const randomEntry = top250films[randomIndex];
   console.log(randomEntry);
-
-  // try {
-  //   const response = await axios.get(
-  //     `${API_URL}/event/randomMovie`
-  //   );
-  //   const movie = response.data;
-  //   console.log("From fRM function", movie);
-  //   return movie;
-  // } catch (error) {
-  //   console.error(error);
-  // }
+  return randomEntry;
 }
 
-function MovieInfo() {
-  const [randomMovie, setRandomMovie] = useState(null);
+function MovieInfo(props) {
+  const { randomMovie, setRandomMovie } = props;
+  const [buttonPressed, setButtonPressed] = useState(false);
+   const handleButtonClick = () => {
+     setButtonPressed(true);
+   };
 
   useEffect(() => {
-    const getRandomMovie = async () => {
-      const movie = await fetchRandomMovie();
-      setRandomMovie(randomEntry);
-      console.log("JSON: ", JSON.stringify(randomMovie));
-    };
-
-    getRandomMovie();
+    const randomMovie = fetchRandomMovie();
+    setRandomMovie(randomMovie);
+    console.log("JSON:", JSON.stringify(randomMovie));
   }, []);
+
+  useEffect(() => {
+    if (buttonPressed) {
+      const randomMovie = fetchRandomMovie();
+      setRandomMovie(randomMovie);
+      setButtonPressed(false);
+      console.log("JSON:", JSON.stringify(randomMovie));
+    }
+  }, [buttonPressed]);
 
   return (
     <>
@@ -43,7 +41,12 @@ function MovieInfo() {
       {/*<p>Rating: {randomMovie && randomMovie.aggregateRating.ratingValue}</p> */}
       <p>Year: {randomMovie && randomMovie.datePublished}</p>
       <p>Genre(s): {randomMovie && randomMovie.genre[0]}</p>
-      <img src={randomMovie && randomMovie.image} />
+      <img
+        src={randomMovie && randomMovie.image}
+        alt={randomMovie && randomMovie.name}
+      />
+      <p>Name: {randomMovie && randomMovie.description}</p>
+      <button onClick={handleButtonClick}>Update Movie</button>
     </>
   );
 }
