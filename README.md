@@ -19,6 +19,8 @@ Given the learning scope of this project and its short timeframe, there are a lo
 
 CONCEIVED, DESIGNED AND PROGRAMMED BY:
 
+Hamed Jalili https://github.com/hamedjalili82
+
 Mariana Ribeiro de Carvalho https://github.com/Mariana-na
 
 Peter Rodger https://github.com/ecce50
