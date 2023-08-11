@@ -34,11 +34,10 @@ function CommentsViewer(props) {
   return (
     <>
       {comments.map((comment) => (
-        <div key={comment._id}>
+        <div className="comment-view" key={comment._id}>
+          <p className="comment-name">{comment.name} </p>
 
-          <p>{comment.name} </p>
-
-          <p>{comment.comment}</p>
+          <p className="comment-message">{comment.comment}</p>
         </div>
       ))}
     </>

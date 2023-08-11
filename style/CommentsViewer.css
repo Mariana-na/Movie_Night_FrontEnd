@@ -1,0 +1,13 @@
+.comment-view {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-name {
+  text-align: left;
+  text-decoration: bold;
+}
+
+.comment-message {
+  text-align: left;
+}

@@ -13,7 +13,6 @@ function NavBar() {
   const isProfilePage = location.pathname === "/profile";
 
   return (
-    <>
       <nav>
         <div className="leftSection">
           <img src="../img/MovieNight.png" alt="logo"/>
@@ -50,7 +49,7 @@ function NavBar() {
           ) : null}
         </div>
       </nav>
-    </>
+ 
   );
 }
 

@@ -1,4 +1,5 @@
 import "/style/global.css";
+import "/style/EventLogistics.css";
 
 function EventLogistics(props) {
 
@@ -15,23 +16,46 @@ function EventLogistics(props) {
 
 
   return (
-    <div className="logistics">
+    <div className="logistics-container">
       <h3>When? Where? Who?</h3>
       {/* <form onSubmit={handleSubmit}> */}
-      <label>Event name </label>
-      <input type="text" name="eventName" value={eventName} onChange={handleEventNameInput} />
-      <label>When? </label>
-      <input type="text" name="when" value={when} onChange={handleWhenInput} />
-      <label>Where? </label>
-      <input
-        type="text"
-        name="where"
-        value={where}
-        onChange={handleWhereInput}
-      />
-      <label>Who? </label>
-      <input type="text" name="who" value={who} onChange={handleWhoInput} />
 
+      <div className="event-name">
+        <label>Give your event a name... </label>
+        <input
+          className="el-logi-input"
+          type="text"
+          name="eventName"
+          value={eventName}
+          onChange={handleEventNameInput}
+        />
+      </div>
+      <div className="input-container">
+        <label>When? </label>
+        <input
+          className="el-logi-input"
+          type="text"
+          name="when"
+          value={when}
+          onChange={handleWhenInput}
+        />
+        <label>Where? </label>
+        <input
+          className="el-logi-input"
+          type="text"
+          name="where"
+          value={where}
+          onChange={handleWhereInput}
+        />
+        <label>Who? </label>
+        <input
+          className="el-logi-input"
+          type="text"
+          name="who"
+          value={who}
+          onChange={handleWhoInput}
+        />
+      </div>
       {/* <button type="submit">Confirm</button> */}
       {/* form */}
     </div>

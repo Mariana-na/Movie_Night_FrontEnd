@@ -1,0 +1,24 @@
+/* .logistics-container {
+    display:flex;
+} */
+
+.input-container {
+    display:flex;
+}
+
+.event-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container > label {
+    margin-right: 1rem;
+}
+
+.el-logi-input {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: none;
+    margin: 0 1rem 1rem 0;
+}
+

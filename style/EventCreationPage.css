@@ -1,3 +1,13 @@
 body {
     margin: 0 8rem 0 8rem;
 }
+
+.event-creation-button {
+color: #cc1838;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  margin-bottom: 3rem;
+
+
+}

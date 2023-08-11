@@ -45,7 +45,7 @@ function EventCreationPage() {
           strMeal: randomMeal.meals[0].strMeal,
           strArea: randomMeal.meals[0].strArea,
           strSource: randomMeal.meals[0].strSource,
-          strYouTube: randomMeal.meals[0].strYouTube,
+          strMealThumb: randomMeal.meals[0].strMealThumb,
         },
         randomMovie: {
           name: randomMovie.name,
@@ -93,7 +93,7 @@ function EventCreationPage() {
             who={who}
             setWho={setWho}
           />
-          <button type="submit">Confirm</button>
+          <button className="event-creation-button" type="submit">Confirm</button>
         </form>
       </div>
     </>
