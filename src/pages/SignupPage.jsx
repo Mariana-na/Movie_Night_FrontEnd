@@ -25,7 +25,7 @@ function SignupPage() {
 
     return (
         <div class="signup-overall-container">
-            <h1 className="signup-title" >Movie Night</h1>
+            <h1 className="signup-title" ><span>Movie</span>Night</h1>
             <form className="signup-form-container" onSubmit={handleSignup} >
                 <label className="signup-text">
                     Name:

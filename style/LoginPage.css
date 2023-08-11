@@ -1,114 +1,122 @@
 /*----------------------------MOBILE----------------------------*/
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
 
-    .login-overall-container {
+  .login-overall-container {
     display: flex;
     flex-direction: column;
-    }
+    align-items: center;
+  }
 
-    .login-title {
-    color: #1D0404;
-    font-size: 4rem;
+  .login-title {
+    color: #1d0404;
+    font-size: 2.5rem;
     margin-top: 180px;
-    }
+    font-weight: 900;
+  }
 
+  .login-title span {
+    color: #ffffff;
+  }
 
-    .login-form-container {
+  .login-form-container {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     gap: 30px;
-    }
+  }
 
-    .login-btn {
+  .login-btn {
     background-color: #ffffff;
-    color: #CC1838;
+    color: #cc1838;
     margin: 30px 10px;
-    padding: 10px 40px;
+    padding: 10px 30px;
     border-radius: 75px;
     font-size: 15px;
     text-transform: uppercase;
     font-weight: bolder;
     border: none;
-    }
+  }
 
-
-    .login-text {
+  .login-text {
     color: #ffffff;
     text-align: left;
-    padding-left: 25px;
+    padding-left: 20px;
     font-size: 1.2rem;
     font-weight: 800;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    }
+  }
 
-    .login-input {
+  .login-input {
     text-align: center;
     width: 300px;
     height: 23px;
     padding: 8px 0px;
     border-radius: 25px;
     border-style: none;
-    font-family:"Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 15px;
-    }
+  }
 
-    .login-signup {
+  .login-signup {
     color: #ffffff;
     align-items: center;
     margin: 0 10px;
-    padding: 10px 40px;
+    padding: 10px 30px;
     border-radius: 75px;
     font-size: 15px;
     text-transform: uppercase;
     font-weight: bolder;
     text-decoration: none;
-    }
+  }
 
-    .login-signup-text {
+  .login-signup-text {
     margin: 25px;
-    }
-
+  }
 }
 
 /*----------------------------WEB----------------------------*/
 
-@media (min-width: 768px) {
-
-    .login-overall-container {
+@media (min-width: 481px) {
+  .login-overall-container {
     display: flex;
     flex-direction: column;
-    }
+    align-items: center;
+  }
 
-    .login-title {
-    color: #1D0404;
+  .login-title {
+    color: #1d0404;
     font-size: 6rem;
-    margin: 120px;
-    }
+    margin: 120px; 
+    font-weight: 900;
+  }
 
-    .login-form-container {
+  .login-title span {
+    color: #ffffff;
+  }
+
+  .login-form-container {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     gap: 30px;
-    }
+  }
 
-    .login-btn {
+  .login-btn {
     background-color: #ffffff;
-    color: #CC1838;
-    margin: 35px 10px;
-    padding: 10px 40px;
+    color: #cc1838;
+    margin: 35px 20px;
+    padding: 10px 60px;
     border-radius: 75px;
     font-size: 23px;
     text-transform: uppercase;
     font-weight: bolder;
     border: none;
-    }
+  }
 
-    .login-text {
+  .login-text {
     color: #ffffff;
     text-align: left;
     padding-left: 25px;
@@ -117,20 +125,19 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    }
-    
+  }
 
-    .login-input {
+  .login-input {
     text-align: center;
     width: 500px;
     padding: 15px 0px;
     border-radius: 25px;
     border-style: none;
-    font-family:"Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 18px;
-    }
+  }
 
-    .login-signup {
+  .login-signup {
     color: #ffffff;
     align-items: center;
     margin: 0 10px;
@@ -138,12 +145,12 @@
     border-radius: 75px;
     font-size: 27px;
     text-transform: uppercase;
-    font-weight:600;
+    font-weight: 600;
     text-decoration: none;
-    }
+  }
 
-    .login-signup-text {
+  .login-signup-text {
     margin: 45px;
     font-size: 25px;
-    }
+  }
 }

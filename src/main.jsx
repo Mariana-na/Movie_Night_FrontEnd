@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-// import "./index.css";
-import "./assets/style/home.css";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContextWrapper } from "./context/Auth.context.jsx";
+import "../style/global.css";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
