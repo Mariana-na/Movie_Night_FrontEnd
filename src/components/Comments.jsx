@@ -5,6 +5,7 @@ import { API_URL } from "../config/config.index";
 import { AuthContext } from "../context/Auth.context";
 import { useContext } from "react";
 import "/style/global.css";
+import "/style/Comments.css";
 
 function Comments(props) { // this is us passing the eventId from the EDP
     
@@ -33,7 +34,7 @@ function Comments(props) { // this is us passing the eventId from the EDP
         <>
             <form onSubmit={handlePostComment}>
                  <textarea cols="30" rows="10" value = {newComment} onChange={(event) => setNewComment(event.target.value)}></textarea>
-                <button type="submit">Send</button>
+                <button className="send-button" type="submit">Send</button>
             </form>
         </>
   )

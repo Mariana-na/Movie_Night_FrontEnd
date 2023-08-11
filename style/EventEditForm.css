@@ -1,0 +1,19 @@
+.event-edit-container {
+    display:flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.event-edit-input {
+border-radius: 2rem;
+border: none;
+padding: 0.5rem;
+}
+
+.event-edit-button {
+border-radius: 2rem;
+border: none;
+padding: 0.5rem;
+color: #CC1838;
+margin-bottom: 2rem;
+}

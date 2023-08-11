@@ -8,6 +8,7 @@ import EventEditForm from "../components/EventEditForm";
 import CommentsViewer from "../components/CommentsViewer";
 import { AuthContext } from "../context/Auth.context";
 import "/style/global.css";
+import "/style/EventDetailPage.css";
 
 function EventDetailPage() {
   const [eventInfo, setEventInfo] = useState(null);
@@ -92,17 +93,48 @@ function EventDetailPage() {
           {isEditing ? (
             <EventEditForm eventInfo={eventInfo} handleUpdate={handleUpdate} />
           ) : (
-            <div>
-              <h1>{eventInfo.eventName}</h1>
-              <p>{eventInfo.recipeId}</p>
-              {randomMeal && <p>{randomMeal.strMeal}</p>}
-              {randomMovie && <p>{randomMovie.name}</p>}
-              <p>{eventInfo.eventDate}</p>
-              <p>{eventInfo.eventLocation}</p>
+            <div className="event-container">
+              <div className="ed-logistics">
+                <h1>{eventInfo.eventName}</h1>
+                <span className="when-where-container">
+                  <span className="when-where">
+                    <h3>When:</h3> <h2>{eventInfo.eventDate}</h2>
+                  </span>
+                  <span className="when-where">
+                    <h3>Where:</h3> <h2>{eventInfo.eventLocation}</h2>
+                  </span>
+                </span>
+              </div>
+              <div className="ed-movie-recipe-container">
+                <div className="ed-movie-container">
+                  {randomMovie && (
+                    <span>
+                      <h4>What we're watching:</h4>
+                      <h2>{randomMovie.name}</h2>
+                    </span>
+                  )}
+                  <img src={randomMovie.image} alt={randomMovie.name} />
+                </div>
+                <div className="ed-recipe-container">
+                  {randomMeal && (
+                    <span>
+                      <h4>What we're eating:</h4>
+                      <h2> {randomMeal.strMeal}</h2>
+                    </span>
+                  )}
+                  <img src={randomMeal.strMealThumb} alt={randomMeal.strMeal} />
+                </div>
+              </div>
+
               {isCurrentUserEventCreator && (
-                <div>
-                  <button onClick={handleEdit}>Update Event</button>
-                  <button onClick={handleDelete}>Delete Event</button>
+                <div className="button-container">
+                  <button className="creator-buttons" onClick={handleEdit}>
+                    Update Event
+                  </button>
+                  <button className="creator-buttons-2" onClick={handleDelete}>
+                    Delete Event
+                    </button>
+                    <p>Send me a comment:</p>
                 </div>
               )}
             </div>
@@ -117,10 +149,7 @@ function EventDetailPage() {
         comments={eventComments}
         setComments={setEventComments}
       />
-      <CommentsViewer
-         comments={eventComments}
-        setComments={setEventComments}
-      />
+      <CommentsViewer comments={eventComments} setComments={setEventComments} />
     </>
   );
 }
