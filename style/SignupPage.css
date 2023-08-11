@@ -5,6 +5,7 @@
     .signup-overall-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     }
 
     .signup-title {
@@ -90,6 +91,7 @@
     .signup-overall-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     }
 
     
