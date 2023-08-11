@@ -1,6 +1,6 @@
 /*----------------------------MOBILE----------------------------*/
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
 
     .prof-title {
         color: #1D0404;
@@ -39,7 +39,7 @@
 
 /*----------------------------WEB----------------------------*/
 
-@media (min-width: 768px) {
+@media (min-width: 481px) {
 
 
     .prof-title {
@@ -57,9 +57,9 @@
 
     .prof-gr {
         color: #ffffff;
-        font-size: 50px;
+        font-size: 40px;
         font-weight: 700;
-        margin-bottom: 90px;
+        margin-bottom: 10px;
     }
 
     .create-event-btn {
