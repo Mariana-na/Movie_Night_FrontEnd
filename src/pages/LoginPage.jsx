@@ -2,9 +2,9 @@ import {useContext, useState} from "react";
 import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
 import {AuthContext} from "../context/Auth.context";
-import "../assets/style/LoginPage.css";
-
 import {API_URL} from "../config/config.index";
+import "/style/global.css";
+import "/style/LoginPage.css";
 
 const LoginPage = () => {
 
@@ -41,34 +41,27 @@ const LoginPage = () => {
 
 
     return (
-        <>
-        <br />
-
-        <Link to={"/"} className="home-btn">Home</Link>
-        
-            <h1 className="login-title"><b>Movie</b>Night</h1>
-            <form onSubmit={handleLogin} >
-                <label>
-                    
-            <p className="login-text">Email:</p> 
+        <div className="login-overall-container">
+            <h1 className="login-title" >Movie Night</h1>
+            <form className="login-form-container" onSubmit={handleLogin} >
+                <label className="login-text" >
+                    Email:
                     <input className="login-input" type="email" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
                 </label>
-                <br />
-                <label>
-                    <p className="login-text">Password:</p>
+                <label className="login-text" >
+                    Password:
                     <input className="login-input" type="password" required value={password} onChange={(event) => {setPassword(event.target.value); }}/>
                 </label>
-                <br /> <br />
                 <button className="login-btn" type="submit" >Log In</button>
             </form>
 
             { errorMessage && <p>{errorMessage}</p> }
 
-            <p className="login-signup-text">Don't have an account yet?</p>
-            <Link to={"/signup"} className="login-signup"> Sign Up</Link>
+            <p className="login-signup-text" >Don't have an account yet?</p>
+            <Link className="login-signup" to={"/signup"}> Sign Up</Link>
 
 
-        </>
+        </div>
     )
 
 }

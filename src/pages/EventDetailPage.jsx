@@ -8,6 +8,7 @@ import { API_URL } from "../config/config.index";
 import EventEditForm from "../components/EventEditForm";
 import CommentsViewer from "../components/CommentsViewer";
 import { AuthContext } from "../context/Auth.context";
+import "/style/global.css";
 
 function EventDetailPage() {
   const [eventInfo, setEventInfo] = useState(null);

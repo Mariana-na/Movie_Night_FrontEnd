@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import "./RecipeInfo.css";
-
+import "/style/global.css";
+import "/style/RecipeInfo.css";
+import { Link } from "react-router-dom";
 
 // Function to fetch the JSON object from the api
 async function fetchRandomMeal() {
-
-try {
+  try {
     const response = await axios.get(
       "https://www.themealdb.com/api/json/v1/1/random.php"
     );
@@ -22,7 +22,6 @@ try {
 function RecipeInfo(props) {
   const { randomMeal, setRandomMeal } = props;
 
-
   useEffect(() => {
     const getRandomMeal = async () => {
       const meal = await fetchRandomMeal();
@@ -33,7 +32,6 @@ function RecipeInfo(props) {
     getRandomMeal();
   }, []);
 
-
   const handleButtonClick = async () => {
     const meal = await fetchRandomMeal();
     setRandomMeal(meal);
@@ -42,15 +40,32 @@ function RecipeInfo(props) {
 
   return (
     <>
-      <p className="event-meal-info"><b>Name: </b>{randomMeal && randomMeal.meals[0].strMeal}</p>
-      <p className="event-meal-info"><b>Area: </b>{randomMeal && randomMeal.meals[0].strArea}</p>
-      <p className="event-meal-info"><b>Recipe: </b>{randomMeal && randomMeal.meals[0].strSource}</p>
-      <p className="event-meal-info"><b>YouTube: </b>{randomMeal && randomMeal.meals[0].strYouTube}</p>
-      <img className="meal-img"
-        src={randomMeal && randomMeal.meals[0].strMealThumb}
-        alt="Meal Thumbnail"
-      />
-      <button onClick={handleButtonClick}>Update Recipe</button>
+      <div className="rInfo">
+        <div className="rInfo-right">
+          <h2>{randomMeal && randomMeal.meals[0].strMeal}</h2>
+          <p id="cuisine">
+            Cuisine: {randomMeal && randomMeal.meals[0].strArea}
+          </p>
+          <div id="buttons">
+            <button className="update" onClick={handleButtonClick}>
+              Update Recipe
+            </button>
+            <span>
+              <Link
+                to={randomMeal && randomMeal.meals[0].strSource}
+                className="recipe-button"
+              >
+                See recipe
+              </Link>
+            </span>
+          </div>
+          {/* <p>YouTube: {randomMeal && randomMeal.meals[0].strYouTube}</p> */}
+        </div>
+        <img
+          src={randomMeal && randomMeal.meals[0].strMealThumb}
+          alt="Meal Thumbnail"
+        />
+      </div>
     </>
   );
 }

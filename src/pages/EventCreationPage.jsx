@@ -8,6 +8,8 @@ import { API_URL } from "../config/config.index";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/Auth.context";
 import { useContext } from "react";
+import "/style/global.css";
+import "/style/EventCreationPage.css";
 
 function EventCreationPage() {
   // const [eventLogistics, setEventLogistics] = useState(null);

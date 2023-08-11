@@ -1,4 +1,4 @@
-//import { useState } from "react";
+import "/style/global.css";
 
 function EventLogistics(props) {
 

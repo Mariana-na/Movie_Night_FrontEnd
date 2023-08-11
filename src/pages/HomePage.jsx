@@ -1,24 +1,22 @@
 import {Link} from "react-router-dom";
 import NavBar from "../components/NavBar";
-import "../assets/style/home.css";
+import "/style/global.css";
+import "/style/HomePage.css";
 
 function HomePage() {
 
-/*   const handleMakeMyNight = () => {
-    console.log("Make My Night clicked");
-  }; */
 
   return (
     <>
         <NavBar/>
 
-        <h1 className="header"><b>Movie</b>Night</h1>
+        <h1 className="header">Movie Night</h1>
 
-        <Link to="/eventCreation"><button>Make My Night!</button></Link>
+        <Link to="/eventCreation"><button className="homePage-mk-btn" >Make My Night!</button></Link>
 
-        <h5 className="home-text">Press the button</h5>
-        <h4 className="home-text">Refine your suggestions</h4>
-        <h2 className="home-text">Have a great night!</h2>
+        <h4 className="home-text" >Press the button</h4>
+        <h3 className="home-text" >Refine your suggestions</h3>
+        <h2 className="home-text" >Have a great night!</h2>
     </>
   );
 }

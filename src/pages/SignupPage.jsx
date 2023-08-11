@@ -2,6 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import {API_URL} from "../config/config.index";
+import "/style/global.css";
+import "/style/SignupPage.css";
+
 function SignupPage() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -21,39 +24,30 @@ function SignupPage() {
     }
 
     return (
-        <>
-
-<br />
-
-<Link to={"/"} className="home-btn">Home</Link>
-            <h1 className="signup-title"><b>Movie</b>Night</h1>
-            <form onSubmit={handleSignup} className="signup-form" >
-
-            <label>
-            <p className="signup-text">Name:</p>
-                    <input placeholder="Your real name. Or a nickname" type="text" required value={name} onChange={(event) => {setName(event.target.value); }}/>
+        <div class="signup-overall-container">
+            <h1 className="signup-title" >Movie Night</h1>
+            <form className="signup-form-container" onSubmit={handleSignup} >
+                <label className="signup-text">
+                    Name:
+                    <input className="signup-input" placeholder="Your real name. Or a nickname" type="text" required value={name} onChange={(event) => {setName(event.target.value); }}/>
                 </label>
-                <br />
-
-                <label>
-                    <p className="signup-text"> Email:</p>
-                    <input type="text" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
+                <label className="signup-text" >
+                    Email:
+                    <input className="signup-input" type="email" required value={email} onChange={(event) => {setEmail(event.target.value); }}/>
                 </label>
-                <br />
-                <label>
-                    <p className="signup-text">Password:</p>
+                <label className="signup-text" >
+                    Password:
                     <input className="signup-input" type="password" required value={password} onChange={(event) => {setPassword(event.target.value); }}/>
                 </label>
-                <br /> <br />
                 <button className="signup-btn" type="submit">Sign Up</button>
             </form>
 
             { errorMessage && <p>{errorMessage}</p> }
 
-            <p>Already have account?</p>
-            <Link to={"/login"} className="signup-login"> Login</Link>
+            <p className="signup-login-text" >Already have account?</p>
+            <Link className="signup-login" to={"/login"}> Login</Link>
 
-        </>
+        </div>
     )
 }
 

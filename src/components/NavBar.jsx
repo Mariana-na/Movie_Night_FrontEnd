@@ -1,47 +1,57 @@
-import {Link} from "react-router-dom";
-import {useContext} from "react";
-import {AuthContext} from "../context/Auth.context";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/Auth.context";
 import { useLocation } from "react-router-dom";
+import "/style/NavBar.css";
+import "/style/global.css";
+
 function NavBar() {
-    const {isLoggedIn, user, logoutUser, isLoading} = useContext(AuthContext);
-    const location = useLocation();
-    const isHomePage = location.pathname === "/";
-    const isProfilePage = location.pathname === "/profile";
+  const { isLoggedIn, user, logoutUser, isLoading } = useContext(AuthContext);
+  const location = useLocation();
 
-    return (
-        <nav className="pages-nav-btn">
-           {location.pathname !== "/" && (
-            <Link to= "/"><button className="btns">Home</button></Link> /*Make it not show up in HomePage */
-           )}
+  const isHomePage = location.pathname === "/";
+  const isProfilePage = location.pathname === "/profile";
 
-                {!isLoading ? (
-                    isLoggedIn ? (
-                      <>
-                        <Link to="/profile">
-                          <button className="btns">Profile</button>
-                        </Link>
-                        <button className="btns" onClick={logoutUser}>Logout</button>
-                        <span>{user && user.name}</span>
-                      </>
-                    ) : (
-                      <>
-                      <section className="nav-btn">
-                        <Link to="/signup">
-                          <button className="nav-btn-sign">Sign Up</button>
-                        </Link>
-                        <Link to="/login">
-                          <button className="nav-btn-login">Login</button>
-                        </Link>
-                        </section>
-                      </>
-                    )
-                  ) : null}
+  return (
+    <>
+      <nav>
+        <div className="leftSection">
+          <img src="../img/MovieNight.png" alt="logo"/>
+          {!isHomePage && (
+            <Link to="/">
+              <button className="buttons">Home</button>
+            </Link>
+          )}
 
-        </nav>
+          {!isLoading && isLoggedIn && !isProfilePage && (
+            <Link to="/profile">
+              <button className="buttons">Profile</button>
+            </Link>
+          )}
 
-    )
+          {isLoggedIn && <span>Hello {user && user.name}</span>}
+        </div>
+        <div className="right-section">
+          {!isLoading ? (
+            isLoggedIn ? (
+              <button className="logOutButton" onClick={logoutUser}>
+                Logout
+              </button>
+            ) : (
+              <>
+                <Link to="/signup">
+                  <button>Sign Up</button>
+                </Link>
+                <Link to="/login">
+                  <button>Login</button>
+                </Link>
+              </>
+            )
+          ) : null}
+        </div>
+      </nav>
+    </>
+  );
 }
 
-
 export default NavBar;
-
