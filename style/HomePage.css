@@ -1,73 +1,164 @@
 /*----------------------------MOBILE----------------------------*/
+@media (max-width: 480px) {
 
-@media (max-width: 767px) {
-
+  .home-overall-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0;
+  }
 
   .header {
-    color: #1D0404;
-    font-size: 4rem;
-    margin: 90px;
+    font-weight: bolder;
+    display: flex;
+    font-size: 3rem;;
+    justify-content: center;
+    margin: 70px 0px 30px 0px;
   }
 
-  .home-text {
-    font-size: 20px;
+  .M {
     color: #ffffff;
-    font-weight: 500;
   }
 
-  .home-text:last-child {
-    font-size: 30px;
+  .N{
+    color: #1D0404;
   }
 
   .homePage-mk-btn {
     background-color: #ffffff;
     color: #400A0A;
     align-items: center;
-    margin: 40px 10px;
-    padding: 25px 35px;
+    margin: 80px 50px 40px 50px;
+    padding: 15px 35px;
     border-radius: 100px;
-    font-size: 30px;
-    font-family:"Roboto", sans-serif;
+    font-size: 2rem;
+    width: 300px;
+    height:100px;
     font-weight: 600;
     border: none;
     text-decoration: none;
   }
 
+  .home-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+  }
+
+  .home-text-h4 {
+    font-size: 20px;
+    background-color: #400A0A;
+    border-radius: 20px;
+    width: 230px;
+    height: 25px;
+    font-weight: 200;
+    margin: 70px 10px 20px 10px;
+  }
+
+  .home-text-h3 {
+    font-size: 22px;
+    background-color: #400A0A;
+    border-radius: 20px;
+    width: 280px;
+    height: 28px;
+    font-weight: 200;
+    margin: 10px 10px 20px 10px;
+  }
+
+  .home-text-h2 {
+    font-size: 27px;
+    background-color: #400A0A;
+    border-radius: 20px;
+    width: 330px;
+    height: 33px;
+    font-weight: 200;
+    margin: 10px 10px 20px 10px;
+  }
+
 }
+
+
 
 /*----------------------------WEB----------------------------*/
 
-@media (min-width: 768px) {
+@media (min-width: 481px) {
 
 
-    .header {
-    color: black;
-    font-size: 6rem;
-    margin: 122px;
-    }
-    
+  .header {
+    font-size: 5rem;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    margin: 70px 0px 30px 0;
+  }
 
-    .home-text {
-    font-size: 25px;
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-    }
+  .M {
+    color: #ffffff;
+  }
+
+  .N{
+    color: #1D0404;
+  }
+
+  .home-overall-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0;
+  }
+
     
-    .home-text:last-child {
-    font-size: 42px;
-    }
-    
-    .homePage-mk-btn {
+  .homePage-mk-btn {
     background-color: #ffffff;
     color: #400A0A;
     align-items: center;
-    margin: 70px 10px;
+    margin: 70px 270px;
     padding: 30px 60px;
     border-radius: 100px;
     font-size: 45px;
-    font-family:"Roboto", sans-serif;
     font-weight: 800;
     border: none;
+    height:130px;
+    width:500px;
     }
 
+
+    .home-text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #ffffff;
+    }
+
+  
+    .home-text-h4 {
+      background-color: #400A0A;
+      border-radius: 20px;
+      font-size: 20px;
+      font-weight: 200;
+      width: 250px;
+      height: 25px;
+      margin: 70px 10px 20px 10px;
+    }
+  
+    .home-text-h3 {
+      font-size: 22px;
+      background-color: #400A0A;
+      border-radius: 20px;
+      width: 280px;
+      height: 28px;
+      font-weight: 200;
+      margin: 10px 10px 20px 10px;
+    }
+  
+    .home-text-h2 {
+      font-size: 27px;
+      background-color: #400A0A;
+      border-radius: 20px;
+      width: 330px;
+      height: 33px;
+      font-weight: 200;
+      margin: 10px 10px 20px 10px;
+    }
 }
