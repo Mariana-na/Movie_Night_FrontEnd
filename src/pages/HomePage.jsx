@@ -7,17 +7,19 @@ function HomePage() {
 
 
   return (
-    <>
+    <div className="home-overall-container">
         <NavBar/>
 
-        <h1 className="header">Movie Night</h1>
+        <h1 className="header"><span className="M">Movie</span><span className="N">Night</span></h1>
 
         <Link to="/eventCreation"><button className="homePage-mk-btn" >Make My Night!</button></Link>
 
-        <h4 className="home-text" >Press the button</h4>
-        <h3 className="home-text" >Refine your suggestions</h3>
-        <h2 className="home-text" >Have a great night!</h2>
-    </>
+        <div className="home-text-container" >
+            <h4 className="home-text-h4">Press the Button</h4>
+            <h3 className="home-text-h3">Refine your Suggestions</h3>
+            <h2 className="home-text-h2">Have a Great Night!</h2>
+        </div>
+    </div>
   );
 }
 
