@@ -1,3 +1,4 @@
+import "../App.css";
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";

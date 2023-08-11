@@ -1,16 +1,22 @@
 /*----------------------------MOBILE----------------------------*/
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
 
     .signup-overall-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     }
 
     .signup-title {
     color: #1D0404;
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-top: 180px;
+    font-weight: 900;
+    }
+
+    .signup-title span {
+        color: #ffffff;
     }
 
     .signup-form-container {
@@ -25,7 +31,7 @@
     color: #CC1838;
     align-items: center;
     margin: 0 10px;
-    padding: 10px 40px;
+    padding: 10px 30px;
     border-radius: 75px;
     font-size: 15px;
     text-transform: uppercase;
@@ -37,7 +43,7 @@
     .signup-text {
     color: #ffffff;
     text-align: left;
-    padding-left: 25px;
+    padding-left: 20px;
     font-size: 1.2rem;
     font-weight: 800;
     font-weight: 800;
@@ -63,7 +69,7 @@
     color: #ffffff;
     align-items: center;
     margin: 0 10px;
-    padding: 10px 40px;
+    padding: 10px 30px;
     border-radius: 75px;
     font-size: 15px;
     text-transform: uppercase;
@@ -79,12 +85,13 @@
 
 /*----------------------------WEB----------------------------*/
 
-@media (min-width: 768px) {
+@media (min-width: 481px) {
 
     
     .signup-overall-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     }
 
     
@@ -92,6 +99,12 @@
     color: #1D0404;
     font-size: 6rem;
     margin: 120px;
+    text-align: center;
+    font-weight: 900;
+    }
+
+    .signup-title span {
+        color: #ffffff;
     }
 
     .signup-form-container {

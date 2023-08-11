@@ -42,7 +42,7 @@ const LoginPage = () => {
 
     return (
         <div className="login-overall-container">
-            <h1 className="login-title" >Movie Night</h1>
+            <h1 className="login-title" ><span>Movie</span>Night</h1>
             <form className="login-form-container" onSubmit={handleLogin} >
                 <label className="login-text" >
                     Email:

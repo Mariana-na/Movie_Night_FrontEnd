@@ -6,34 +6,26 @@ import "/style/global.css";
 import "/style/SignupPage.css";
 
 function SignupPage() {
-
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     // eslint-disable-next-line no-unused-vars
     const [errorMessage, setErrorMessage] = useState(undefined);
-
     const navigate = useNavigate();
-
     const handleSignup = async (event) => {
         event.preventDefault()
-
         try {
             const response = await axios.post(`${API_URL}/auth/signup`, {name, email, password})
-
             console.log("signup response", response)
-
             navigate("/login");
-
         } catch (error) {
             console.log(error);
-            
         }
     }
 
     return (
         <div class="signup-overall-container">
-            <h1 className="signup-title" >Movie Night</h1>
+            <h1 className="signup-title" ><span>Movie</span>Night</h1>
             <form className="signup-form-container" onSubmit={handleSignup} >
                 <label className="signup-text">
                     Name:
